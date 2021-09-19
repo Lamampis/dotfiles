@@ -5,13 +5,17 @@
 
 ![Desktop Screen](desktopscreenshot.png)
 
-OS: Arch Linux
+### OS: 
+Arch Linux
 
-Window Manager: xmonad 
+### Window Manager: 
+xmonad 
 
-Bar: xmobar
+### Bar: 
+xmobar
 
-Prompt: rofi
+### Prompt: 
+rofi
 
 Font: Iosevka Nerd Font
 
