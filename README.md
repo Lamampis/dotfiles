@@ -1,7 +1,9 @@
 # dotfiles
  My mostly yoinked dotfiles for my xmonad. Feel free to copy them.
 
-![Alt text](/Lamampis/dotfiles/desktopscreenshot.png?raw=true "Optional Title")
+### Screen
+
+![Desktop Screen](desktopscreenshot.png)
 
 OS: Arch Linux
 
