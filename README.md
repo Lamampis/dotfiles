@@ -17,18 +17,26 @@ xmobar
 ### Prompt: 
 rofi
 
-Font: Iosevka Nerd Font
+### Font: 
+Iosevka Nerd Font
 
-Colorscheme: Dracula
+### Colorscheme: 
+Dracula
 
-Icons: Papirus
+### Icons: 
+Papirus
 
-Terminal: alacritty
+### Terminal: 
+alacritty
 
-Shell: zsh
+### Shell: 
+zsh
 
-Compositor: picom (compton)
+### Compositor: 
+picom-ibhagwan-git
 
-Wallpaper applier: nitrogen
+### Wallpaper applier: 
+nitrogen
 
-Notifications: Dunst
+### Notifications: 
+Dunst
