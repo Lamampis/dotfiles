@@ -1,4 +1,4 @@
-#+TITLE: My xmonad configuration 
+#### My xmonad configuration 
 
 # dotfiles
  My mostly yoinked dotfiles for my xmonad. Feel free to copy them.
