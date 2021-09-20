@@ -1,9 +1,11 @@
 # My xmonad configuration
  My mostly yoinked dotfiles for my xmonad. Feel free to copy them.
 
-### Screen
+### Screenshots
 
 ![Desktop Screen](desktopscreenshot.png)
+
+![Desktop Screen](Screenshot from 2021-09-20 11-13-32.png.png)
 
 ### OS: 
 Arch Linux
