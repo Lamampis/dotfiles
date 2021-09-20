@@ -5,6 +5,8 @@
 
 ![Desktop Screen](desktopscreenshot.png)
 
+![Rofi](rofishowcase.png)
+
 ### OS: 
 Arch Linux
 
