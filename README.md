@@ -5,7 +5,7 @@
 
 ![Desktop Screen](desktopscreenshot.png)
 
-![Desktop Screen](Screenshot from 2021-09-20 11-13-32.png.png)
+![Desktop Screen](Screenshot from 2021-09-20 11-13-32.png)
 
 ### OS: 
 Arch Linux
