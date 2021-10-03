@@ -12,15 +12,14 @@
 
 -- Parameters
    , bgColor = "#201c2c"
--- , alpha = 1 -- For transparent bar
-   , position = TopSize C 100 26
+   , position = TopSize C 100 26      --Max Bar size is 31 in order for the powerline effect to work
    , lowerOnStart = True
    , hideOnStart = False
    , allDesktops = True
    , sepChar = "%"
    , alignSep = "}{"
    , persistent = True
-   , iconRoot = "/home/lampis/.xmonad/xpm/"
+   , iconRoot = "/home/lampis/.config/xmonad/xpm/"
    , commands = [
 
 -- Workspaces Indicator (see xmonad.hs)
@@ -54,7 +53,8 @@
    , Run Date "<fc=#201c2c,#ab72e1> <fn=5> </fn> %b %d %Y</fc><fc=#201c2c,#ab72e1><fn=5></fn> %H:%M </fc>" "date" 50] 
 
 -- Status Bar Template with custom powerline design (change box width depending on bar height)
-   , template = " <icon=haskell.xpm/> <fc=#666666>| </fc>%UnsafeStdinReader% }{\
+   , template = 
+   " <icon=haskell.xpm/> <fc=#666666>| </fc>%UnsafeStdinReader% }{\
    \<icon=pl3.xpm/><box type=VBoth width=6 mb=0 color=#CB98FB><fc=#201c2c>%cpu%</fc></box>\
    \<icon=pl1.xpm/><box type=VBoth width=6 mb=0 color=#ab72e1><fc=#201c2c>%multicoretemp%</fc></box>\
    \<icon=pl2.xpm/><box type=VBoth width=6 mb=0 color=#CB98FB><fc=#201c2c>%memory%</fc></box>\
