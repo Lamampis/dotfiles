@@ -48,7 +48,7 @@ nitrogen
 Dunst
 
 ### Contact Info:
-You can contact via:
+You can contact me via
 
 Discord: Lamampis#2521
 
