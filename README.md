@@ -32,10 +32,10 @@ Papirus
 alacritty
 
 ### Shell: 
-zsh
+zsh (with agnoster theme)
 
 ### Compositor: 
-picom-ibhagwan-git
+picom-jonaburg-git
 
 ### Wallpaper applier: 
 nitrogen
