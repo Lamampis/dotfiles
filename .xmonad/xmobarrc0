@@ -12,7 +12,6 @@
 
 -- Parameters
    , bgColor = "#201c2c"
---   , alpha = 1 -- For transparent bar
    , fgColor = "#ff6c6b"
    , position = TopSize C 100 26
    , lowerOnStart = True
@@ -21,7 +20,7 @@
    , sepChar = "%"
    , alignSep = "}{"
    , persistent = True
-   , iconRoot = "/home/lampis/.xmonad/xpm/"
+   , iconRoot = "/home/lampis/.config/xmonad/xpm/"
    , commands = [
 
 -- Workspaces Indicator (see xmonad.hs)
