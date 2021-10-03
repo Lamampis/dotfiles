@@ -46,3 +46,8 @@ nitrogen
 
 ### Notifications: 
 Dunst
+
+### Contact Info:
+You can contact via:
+Discord: Lamampis#2521
+Mail: lampis750@tutanota.com
