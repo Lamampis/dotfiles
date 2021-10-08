@@ -24,7 +24,6 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.DynamicBars
 -- Layouts/Modifiers.
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.ResizableTile
@@ -41,27 +40,45 @@ import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 -- Defaults
 myFont = "xft:Iosevka Nerd Font:regular:size=9:antialias=true:hinting=true"
-myModMask = mod4Mask                             -- Sets Mod Key to Super.
-myTerminal = "alacritty"                         -- Sets Alacritty as default Terminal Emulator.
-myBrowser = "brave"                              -- Sets Brave as browser.
-myBorderWidth = 2                               -- Sets Border Width in pixels.
+myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn.
+myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
+myBrowser = "brave"                              -- Sets default browser.
+myBorderWidth = 2                                -- Sets Border Width in pixels.
 myNormColor   = "#201c2c"                        -- Border color of normal windows.
 myFocusColor  = "#BE7FFA"                        -- Border color of focused windows.
 -- Startup Applications
 myStartupHook = do
     spawnPipe "nitrogen --restore"   -- feh is the alternative "feh --bg-scale /directory/of/desired/background &"
-    spawnPipe "picom --experimental-backends"
-    spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawnOnce "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
-    spawnOnce "xsetroot -cursor_name Left_ptr"
+    spawnPipe "picom --experimental-backends" --Compositor
+    spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" -- Graphical authentication agent.
+    spawnOnce "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle" -- Switch keyboard layouts with Alt-Shift
+    spawnOnce "xsetroot -cursor_name Left_ptr" 
+    spawnOnce "unclutter"     -- Hides mouse when not in use.
     spawnOnce "xset s off"
     spawnOnce "xset s 0 0"
     spawnOnce "xset -dpms"
     spawnOnce "autorandr -cf" --  "xrandr --auto --output HDMI-2 --auto --left-of eDP-1"
+-- Workspaces.
+myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "] 
+myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
+clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>" -- i have no idea how this works
+    where i = fromJust $ M.lookup ws myWorkspaceIndices
+-- Layouts config.
+tall     = renamed [Replace "Tall"]
+           $ limitWindows 10
+           $ spacingRaw False (Border 0 0 0 0) True (Border 10 10 10 10) True
+           $ ResizableTall 1 (3/100) (10/20) []
+monocle  = renamed [Replace "Monocle"]
+           $ limitWindows 10 Full
+floats   = renamed [Replace "Float"]
+           $ limitWindows 10 simplestFloat
+myLayoutHook = avoidStruts $ T.toggleLayouts floats $ lessBorders OnlyScreenFloat
+             $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
+             where  myDefaultLayout = (tall ||| smartBorders monocle ||| floats)
+-- Keyboard shortcuts.
 myKeys =
 -- Base.
-     [ ("M-C-r", spawn "xmonad --recompile")     -- Recomplies xmonad.
-     , ("M-S-r", spawn "xmonad --restart")       -- Restarts xmonads.
+     [ ("M-S-r", spawn "xmonad --recompile")     -- Recomplies xmonad.
      , ("M-S-q", io exitSuccess)                 -- Quits xmonad.
      , ("M-S-c", kill1)                          -- Kill the currently focused client.
      , ("M-S-a", killAll)                        -- Kill all windows on current workspace.
@@ -74,13 +91,12 @@ myKeys =
      , ("M-b", spawn (myBrowser))                -- Launches Brave Web Browser.
      , ("M-d", spawn "discord")                  -- Launches DiscordApp.
      , ("M-n", spawn "nemo")                     -- Launches Nemo file manager.
--- Window Mode Set.
+-- Window layouts modifiers.
      , ("M-f", sendMessage (T.Toggle "floats"))  -- Toggles my 'floats' layout.
      , ("M-t", withFocused $ windows . W.sink)   -- Push floating window back to tile.
      , ("M-S-t", sinkAll)                        -- Push ALL floating windows to tile.
--- Layouts.
-     , ("M-<Tab>", sendMessage NextLayout)       -- Switch to next layout.
      , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles Fullscreen/NB.
+     , ("M-<Tab>", sendMessage NextLayout)       -- Switch to next layout.
 -- Space control.
      , ("M-S-i", decScreenSpacing 4)             -- Decrease screen spacing.
      , ("M-S-u", incScreenSpacing 4)             -- Increase screen spacing.
@@ -98,23 +114,7 @@ myKeys =
      , ("M-S-l", windows W.swapUp)               -- Swap focused window with prev window.
      , ("M-<Backspace>", promote)                -- Promote focused window to master.
      , ("M-S-<Tab>", rotSlavesDown)]             -- Rotate all windows except master and keep focus in place.
--- Layouts config.
-tall     = renamed [Replace "Tall"]
-           $ limitWindows 10
-           $ spacingRaw False (Border 0 0 0 0) True (Border 10 10 10 10) True
-           $ ResizableTall 1 (3/100) (10/20) []
-monocle  = renamed [Replace "Monocle"]
-           $ limitWindows 10 Full
-floats   = renamed [Replace "Float"]
-           $ limitWindows 10 simplestFloat
-myLayoutHook = avoidStruts $ T.toggleLayouts floats $ lessBorders OnlyScreenFloat
-             $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
-             where  myDefaultLayout = (tall ||| smartBorders monocle ||| floats)
--- Workspaces.
-myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "] 
-myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
-clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
-    where i = fromJust $ M.lookup ws myWorkspaceIndices
+-- Set window properties.
 myManageHook = composeAll                           
      [ className =? "control"         --> doFloat
      , className =? "error"           --> doFloat
@@ -134,7 +134,7 @@ main = do
     xmproc0 <- spawnPipe "xmobar -x 0 /home/lampis/.config/xmonad/xmobarrc1" 
     xmonad $ ewmh def 
      { manageHook         = myManageHook <+> manageDocks
-     , handleEventHook    = docksEventHook <+> fullscreenEventHook     -- Fullscreen Support. ((M-<Space>) Alternative)
+     , handleEventHook    = docksEventHook <+> fullscreenEventHook     -- Auto Fullscreen. ((M-<Space>) to manually set fullscreen)
      , modMask            = myModMask
      , startupHook        = myStartupHook
      , layoutHook         = myLayoutHook
@@ -142,7 +142,7 @@ main = do
      , borderWidth        = myBorderWidth
      , normalBorderColor  = myNormColor
      , focusedBorderColor = myFocusColor 
-     , logHook = dynamicLogWithPP $ xmobarPP                           -- Xmobar settings (pp).
+     , logHook = dynamicLogWithPP $ xmobarPP                           -- Xmobar settings.
        { ppOutput = \x -> hPutStrLn xmproc0 x                          -- Places xmobar on Display 1.
        , ppCurrent = xmobarColor "#73d0ff" "" . wrap "<box type=Bottom width=2 mb=2 color=#c792ea>" "</box>"         -- Current Workspace.
        , ppVisible = xmobarColor "#73d0ff" "" . clickable              -- Visible Workspaces.
