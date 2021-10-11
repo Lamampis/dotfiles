@@ -3,7 +3,8 @@
 
 ### Prerequisites: 
 
- You need the git versions of xmonad, xmobar and xmonad-contrib for these configs to function, you can find them in the AUR.
+ Xmonad, xmonad-contrib and xmobar from the Arch repos are old and the git versions from the AUR seem to cause problems.
+I recommend installing these packages with stack, heres how:https://brianbuccola.com/how-to-install-xmonad-and-xmobar-via-stack/
 
 ### Screenshots
 
