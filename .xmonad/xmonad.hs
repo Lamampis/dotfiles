@@ -44,7 +44,7 @@ myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn
 myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
 myBrowser = "brave"                              -- Sets default browser.
 myBorderWidth = 2                                -- Sets Border Width in pixels.
-myNormColor   = "#201c2c"                        -- Border color of normal windows.
+myNormColor   = "#1a1b26"                        -- Border color of normal windows.
 myFocusColor  = "#BE7FFA"                        -- Border color of focused windows.
 -- Startup Applications
 myStartupHook = do
@@ -53,7 +53,7 @@ myStartupHook = do
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" -- Graphical authentication agent.
     spawnOnce "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle" -- Switch keyboard layouts with Alt-Shift
     spawnOnce "xsetroot -cursor_name Left_ptr" 
-    spawnOnce "unclutter"     -- Hides mouse when not in use.
+    spawnOnce "unclutter"     -- Hides cursor when not in use.
     spawnOnce "xset s off"
     spawnOnce "xset s 0 0"
     spawnOnce "xset -dpms"
@@ -98,8 +98,8 @@ myKeys =
      , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles Fullscreen/NB.
      , ("M-<Tab>", sendMessage NextLayout)       -- Switch to next layout.
 -- Space control.
-     , ("M-S-i", decScreenSpacing 4)             -- Decrease screen spacing.
-     , ("M-S-u", incScreenSpacing 4)             -- Increase screen spacing.
+     , ("M-S-i", decScreenSpacing 8)             -- Decrease screen spacing.
+     , ("M-S-u", incScreenSpacing 8)             -- Increase screen spacing.
 -- Resizing.
      , ("M-h", sendMessage Shrink)               -- Shrink horiz window width.
      , ("M-l", sendMessage Expand)               -- Expand horiz window width.
@@ -132,9 +132,8 @@ myManageHook = composeAll
 -- Main.
 main = do
     xmproc0 <- spawnPipe "xmobar -x 0 /home/lampis/.config/xmonad/xmobarrc1" 
-    xmonad $ ewmh def 
-     { manageHook         = myManageHook <+> manageDocks
-     , handleEventHook    = docksEventHook <+> fullscreenEventHook     -- Auto Fullscreen. ((M-<Space>) to manually set fullscreen)
+    xmonad . docks . ewmh . ewmhFullscreen $ def
+       { manageHook         = myManageHook
      , modMask            = myModMask
      , startupHook        = myStartupHook
      , layoutHook         = myLayoutHook
