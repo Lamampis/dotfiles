@@ -4,7 +4,7 @@
 ### Prerequisites: 
 
  Xmonad, xmonad-contrib and xmobar from the Arch repos are old and the git versions from the AUR seem to cause problems.
-I recommend installing these packages with stack, here's how:https://brianbuccola.com/how-to-install-xmonad-and-xmobar-via-stack/
+I recommend installing these packages with stack, [here's how.](https://brianbuccola.com/how-to-install-xmonad-and-xmobar-via-stack/)
 
 ### Screenshots
 
