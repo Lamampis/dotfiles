@@ -49,7 +49,7 @@
    , Run Kbd [("us", "<fc=#3c3836,#fbf1c7> us  </fc>") , ("gr", "<fc=#3c3836,#fbf1c7> ελ  </fc>")]
 
 -- Date/Time
-   , Run Date "<fc=#3c383,#d8e49c> <fn=5> </fn> %b %d %Y</fc><fc=#3c3836,#d8e49c><fn=5></fn> %H:%M </fc>" "date" 50] 
+   , Run Date "<fc=#3c3836,#d8e49c> <fn=5> </fn> %b %d %Y</fc><fc=#3c3836,#d8e49c><fn=5></fn> %H:%M </fc>" "date" 50] 
 
 -- Status Bar Template with custom powerline design (change VBox width depending on bar height)
    , template = 
