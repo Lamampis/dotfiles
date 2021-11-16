@@ -44,8 +44,8 @@ myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn
 myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
 myBrowser = "brave"                              -- Sets default browser.
 myBorderWidth = 2                                -- Sets Border Width in pixels.
-myNormColor   = "#1a1b26"                        -- Border color of normal windows.
-myFocusColor  = "#BE7FFA"                        -- Border color of focused windows.
+myNormColor   = "#282828"                        -- Border color of normal windows.
+myFocusColor  = "#d8e49c"                        -- Border color of focused windows.
 -- Startup Applications
 myStartupHook = do
     spawnPipe "nitrogen --restore"   -- feh is the alternative "feh --bg-scale /directory/of/desired/background &"
@@ -82,7 +82,7 @@ myKeys =
      , ("M-S-q", io exitSuccess)                 -- Quits xmonad.
      , ("M-S-c", kill1)                          -- Kill the currently focused client.
      , ("M-S-a", killAll)                        -- Kill all windows on current workspace.
-     , ("M-S-n", spawn "rofi -show file-browser-extended -file-browser-show-hidden -theme RofiFiles") -- Launches rofi File Browser.
+--     , ("M-S-n", spawn "rofi -show file-browser-extended -file-browser-show-hidden -theme RofiFiles") -- Launches rofi File Browser.
      , ("M-S-<Return>", spawn "rofi -show drun -theme RofiApplications") -- Launches rofi App Launcher.
      , ("M-S-<Right>", spawn "pamixer -i 10")    -- Increases Volume by 10%.
      , ("M-S-<Left>", spawn "pamixer -d 10")     -- Decreases Volume by 10%.
@@ -133,7 +133,7 @@ myManageHook = composeAll
 main = do
     xmproc0 <- spawnPipe "xmobar -x 0 /home/lampis/.config/xmonad/xmobarrc1" 
     xmonad . docks . ewmh . ewmhFullscreen $ def
-       { manageHook         = myManageHook
+     { manageHook         = myManageHook
      , modMask            = myModMask
      , startupHook        = myStartupHook
      , layoutHook         = myLayoutHook
@@ -143,13 +143,13 @@ main = do
      , focusedBorderColor = myFocusColor 
      , logHook = dynamicLogWithPP $ xmobarPP                           -- Xmobar settings.
        { ppOutput = \x -> hPutStrLn xmproc0 x                          -- Places xmobar on Display 1.
-       , ppCurrent = xmobarColor "#73d0ff" "" . wrap "<box type=Bottom width=2 mb=2 color=#c792ea>" "</box>"         -- Current Workspace.
-       , ppVisible = xmobarColor "#73d0ff" "" . clickable              -- Visible Workspaces.
-       , ppHidden = xmobarColor "#73d0ff" "" . wrap "<box type=Top width=2 mt=2 color=#82AAFF>" "</box>" . clickable -- Hidden Workspaces.
-       , ppHiddenNoWindows = xmobarColor "#73d0ff" ""  . clickable     -- Hidden Workspaces without windows.
-       , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Active window title.
+       , ppCurrent = xmobarColor "#ebdbb2" "" . wrap "<box type=Bottom width=2 mb=2 color=#ebdbb2>" "</box>"         -- Current Workspace.
+       , ppVisible = xmobarColor "#ebdbb2" "" . clickable              -- Visible Workspaces.
+       , ppHidden = xmobarColor "#ebdbb2" "" . wrap "<box type=Top width=2 mt=2 color=#ebdbb2>" "</box>" . clickable -- Hidden Workspaces.
+       , ppHiddenNoWindows = xmobarColor "#ebdbb2" ""  . clickable     -- Hidden Workspaces without windows.
+       , ppTitle = xmobarColor "#ebdbb2" "" . shorten 60               -- Active window title.
        , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character.
-       , ppLayout = xmobarColor "#67bbe5" ""                           -- Current Layout Indicator.
-       , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"            -- Urgent workspace.
+       , ppLayout = xmobarColor "#ebdbb2" ""                           -- Current Layout Indicator.
+       , ppUrgent = xmobarColor "#ebdbb2" "" . wrap "!" "!"            -- Urgent workspace.
        , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t] } }                -- Xmobar template.
        `additionalKeysP` myKeys
