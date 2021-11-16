@@ -14,9 +14,9 @@ configuration {
 
 
 * {
-  background-color: #142A35;
-  border-color: #2e343f;
-  text-color: #8ca0aa;
+  background-color: #282828;
+  border-color: #282828;
+  text-color: #ebdbb2;
   spacing: 2;
   width: 430px;
 }
@@ -34,7 +34,7 @@ prompt {
 textbox {
   background-color: 				inherit;
   border: 0 0 5px 0;
-  border-color: #282C33;
+  border-color: #282828;
   padding: 8px 16px;
 }
 
@@ -50,7 +50,7 @@ element-icon {
 entry {
   padding: 20px;
   placeholder:                    "Search Applications";
-  background-color: #12252f;
+  background-color: #202424;
 }
 
 listview {
@@ -65,5 +65,5 @@ element {
 }
 
 element selected {
-  background-color: #2e343f;
+  background-color: #3B3B;
 }
