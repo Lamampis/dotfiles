@@ -39,6 +39,9 @@ alacritty
 ### Shell: 
 zsh (with agnoster theme)
 
+### Editor:
+[SpaceVim](https://spacevim.org/)
+
 ### Compositor: 
 picom-jonaburg-git
 
