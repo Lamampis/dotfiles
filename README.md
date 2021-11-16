@@ -8,9 +8,9 @@ I recommend installing these packages with stack, [here's how.](https://brianbuc
 
 ### Screenshots
 
-![Desktop Screen](desktopscreenshot.png)
+![](desktopscreenshot.png)
 
-![Rofi](rofishowcase.png)
+![](gruvbox.png)
 
 ### OS: 
 Arch Linux
