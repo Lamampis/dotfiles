@@ -28,7 +28,7 @@ rofi
 Iosevka Nerd Font
 
 ### Colorscheme: 
-Dracula
+Gruvbox Dark
 
 ### Icons: 
 Papirus
@@ -37,7 +37,7 @@ Papirus
 alacritty
 
 ### Shell: 
-zsh (with agnoster theme)
+zsh (with lambda theme)
 
 ### Editor:
 [SpaceVim](https://spacevim.org/)
