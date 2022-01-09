@@ -1,7 +1,6 @@
-
 [colors]
-	background = "#1C1927"
-	foreground = "#93A1A1"
+	background = "#282828"
+	foreground = "#d8e49c"
 
 [global]
     ### Display ###
@@ -16,11 +15,11 @@
     transparency = 0
     notification_height = 0
     separator_height = 3
-    padding = 24
+    padding = 22
     horizontal_padding = 24
     frame_width = 2
 
-    frame_color = "#BE7FFA"
+    frame_color = "#FFFFFF"
     separator_color = auto
     sort = yes
     idle_threshold = 120
@@ -28,7 +27,7 @@
     
 
     ### Text ###
-    font = Iosevka Nerd Font 9
+    font = Iosevka 9
     line_height = 0
 
     markup = full
@@ -70,7 +69,7 @@
     title = Dunst
     class = Dunst
     startup_notification = false
-    force_xinerama = false
+    force_xinerama = true
     verbosity = mesg
 
 [experimental]
@@ -85,20 +84,18 @@
 [urgency_low]
     background = colors.background
     foreground = colors.foreground
-    frame_color = "#1C1927"
+    frame_color = "#282828"
     timeout = 10
 
 [urgency_normal]
     background = colors.background
     foreground = colors.foreground
-    frame_color = "#1C1927"
+    frame_color = "#282828"
     timeout = 10
 
 [urgency_critical]
     background = colors.background
     foreground = colors.foreground
-    frame_color = "#8C3D45"
+    frame_color = "#282828"
     timeout = 10
-
-
 
