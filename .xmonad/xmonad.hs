@@ -39,10 +39,10 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 -- Defaults
-myFont = "xft:Iosevka Nerd Font:regular:size=9:antialias=true:hinting=true"
+myFont = "xft:Iosevka:regular:size=9:antialias=true:hinting=true"
 myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn.
 myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
-myBrowser = "brave"                              -- Sets default browser.
+myBrowser = "firefox"                            -- Sets default browser.
 myBorderWidth = 2                                -- Sets Border Width in pixels.
 myNormColor   = "#282828"                        -- Border color of normal windows.
 myFocusColor  = "#d8e49c"                        -- Border color of focused windows.
@@ -50,7 +50,8 @@ myFocusColor  = "#d8e49c"                        -- Border color of focused wind
 myStartupHook = do
     spawnPipe "nitrogen --restore"   -- feh is the alternative "feh --bg-scale /directory/of/desired/background &"
     spawnPipe "picom --experimental-backends" --Compositor
-    spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" -- Graphical authentication agent.
+    spawnPipe "xmobar -x 0 /home/lampis/.xmonad/xmobarrc1"
+    spawnOnce "/usr/libexec/polkit-gnome-authentication-agent-1" -- Graphical authentication agent.
     spawnOnce "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle" -- Switch keyboard layouts with Alt-Shift
     spawnOnce "xsetroot -cursor_name Left_ptr" 
     spawnOnce "unclutter"     -- Hides cursor when not in use.
@@ -79,6 +80,7 @@ myLayoutHook = avoidStruts $ T.toggleLayouts floats $ lessBorders OnlyScreenFloa
 myKeys =
 -- Base.
      [ ("M-S-r", spawn "xmonad --recompile")     -- Recomplies xmonad.
+     , ("M-q", spawn "xmonad --restart")         -- Restarts xmonad.
      , ("M-S-q", io exitSuccess)                 -- Quits xmonad.
      , ("M-S-c", kill1)                          -- Kill the currently focused client.
      , ("M-S-a", killAll)                        -- Kill all windows on current workspace.
@@ -131,7 +133,7 @@ myManageHook = composeAll
      , isFullscreen -->  doFullFloat ] 
 -- Main.
 main = do
-    xmproc0 <- spawnPipe "xmobar -x 0 /home/lampis/.config/xmonad/xmobarrc1" 
+    xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobarrc1"
     xmonad . docks . ewmh . ewmhFullscreen $ def
      { manageHook         = myManageHook
      , modMask            = myModMask
@@ -148,7 +150,7 @@ main = do
        , ppHidden = xmobarColor "#ebdbb2" "" . wrap "<box type=Top width=2 mt=2 color=#ebdbb2>" "</box>" . clickable -- Hidden Workspaces.
        , ppHiddenNoWindows = xmobarColor "#ebdbb2" ""  . clickable     -- Hidden Workspaces without windows.
        , ppTitle = xmobarColor "#ebdbb2" "" . shorten 60               -- Active window title.
-       , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character.
+       , ppSep =  "<fc=#666666> <fn=0>|</fn> </fc>"                    -- Separator character.
        , ppLayout = xmobarColor "#ebdbb2" ""                           -- Current Layout Indicator.
        , ppUrgent = xmobarColor "#ebdbb2" "" . wrap "!" "!"            -- Urgent workspace.
        , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t] } }                -- Xmobar template.
