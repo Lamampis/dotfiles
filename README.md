@@ -12,6 +12,8 @@ I recommend installing these packages with stack, [here's how.](https://brianbuc
 
 ![](gruvbox.png)
 
+![](gruvbox.png)
+
 ### OS: 
 Arch Linux
 
