@@ -13,7 +13,7 @@ I recommend installing these packages with stack, [here's how.](https://brianbuc
 ![](gruvbox2.png)
 
 ### OS: 
-Arch Linux
+Arch Linux/Gentoo Linux
 
 ### Window Manager: 
 xmonad 
