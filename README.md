@@ -10,9 +10,7 @@ I recommend installing these packages with stack, [here's how.](https://brianbuc
 
 ![](desktopscreenshot.png)
 
-![](gruvbox.png)
-
-![](gruvbox.png)
+![](gruvbox2.png)
 
 ### OS: 
 Arch Linux
