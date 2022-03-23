@@ -31,7 +31,7 @@ Iosevka Nerd Font
 Gruvbox Dark
 
 ### Icons: 
-Papirus
+Papirus/Windows 11 Green Dark
 
 ### Terminal: 
 alacritty
