@@ -6,9 +6,8 @@
 --   \//\/_/\/_/\/_/\/_/\/___/  \/___/  \/__/\/_/ \/_/                                               
 --   
 -- Fonts
-   Config { font    = "xft:Iosevka Nerd Font:weight=bold:pixelsize=11:antialias=true:hinting=true"
-   , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true"
-   , "xft:Font Awesome 5 Free Solid:pixelsize=11"]
+   Config { font    = "xft:Iosevka:weight=bold:pixelsize=12:antialias=true:hinting=true"
+   , additionalFonts = [ "xft:Font Awesome 5 Free Solid:pixelsize=12:antialias=true:hinting=true"]
 
 -- Parameters
    , bgColor = "#282828"
@@ -18,38 +17,38 @@
    , sepChar = "%"
    , alignSep = "}{"
    , persistent = True
-   , iconRoot = "/home/lampis/.config/xmonad/xpm/"
+   , iconRoot = "/home/lampis/.xmonad/xpm/"
    , commands = [
 
 -- Workspaces Indicator (see xmonad.hs)
    Run UnsafeStdinReader
 
 -- Cpu Usage 
-   , Run Cpu ["-t","<fc=#3c3836,#fbf1c7> <fn=2>\xf108</fn> cpu: (<total>%)  </fc>"] 20
+   , Run Cpu ["-t","<fc=#3c3836,#fbf1c7> <fn=1>\xf108</fn> cpu: (<total>%)  </fc>"] 20
 
 -- CPU Core Temperature Indicator
    , Run MultiCoreTemp
-   ["-t","<fc=#3c3836,#d8e49c> <fn=2></fn> <avg> °C  </fc>", "-L", "20", "-H", "80"] 30
+   ["-t","<fc=#3c3836,#d8e49c> <fn=1></fn> <avg> °C  </fc>", "-L", "20", "-H", "80"] 30
 
 -- RAM Usage Indicator
-   , Run Memory ["-t","<fc=#3c3836,#fbf1c7> <fn=2></fn> <used>mb: (<usedratio>%)  </fc>"] 20
+   , Run Memory ["-t","<fc=#3c3836,#fbf1c7> <fn=1></fn> <used>mb: (<usedratio>%)  </fc>"] 20
 
 -- Network
-   , Run DynNetwork ["-t","<fc=#3c3836,#d8e49c> <fn=2></fn> <tx>kB/s|<rx>kB/s  </fc>"
+   , Run DynNetwork ["-t","<fc=#3c3836,#d8e49c> <fn=1></fn> <tx>kB/s|<rx>kB/s  </fc>"
    , "--Low"      , "1000"       -- units: B/s
    , "--low"      , "#3c3836,#d8e49c"] 15
 
 -- Weather Indicator
-   , Run WeatherX "LGLR" [ ] ["-t","<fc=#3c3836,#fbf1c7> <fn=2></fn> <tempC> °C  </fc>"] 6000
+   , Run WeatherX "LGLR" [ ] ["-t","<fc=#3c3836,#fbf1c7> <fn=1></fn> <tempC> °C  </fc>"] 6000
 
 -- Free Available Disk Space
-   , Run DiskU [("/","<fc=#3c3836,#d8e49c> <fn=2></fn> ssd: <free>  </fc>")] [] 600
+   , Run DiskU [("/","<fc=#3c3836,#d8e49c> <fn=1></fn> ssd: <free>  </fc>")] [] 600
 
 -- Keyboard Layout Indicator
    , Run Kbd [("us", "<fc=#3c3836,#fbf1c7> us  </fc>") , ("gr", "<fc=#3c3836,#fbf1c7> ελ  </fc>")]
 
 -- Date/Time
-   , Run Date "<fc=#3c3836,#d8e49c> <fn=5> </fn> %b %d %Y</fc><fc=#3c3836,#d8e49c><fn=5></fn> %H:%M </fc>" "date" 50] 
+   , Run Date "<fc=#3c3836,#d8e49c> <fn=1></fn> %b %d %Y</fc><fc=#3c3836,#d8e49c><fn=5></fn> %H:%M </fc>" "date" 50] 
 
 -- Status Bar Template with custom powerline design (change VBox width depending on bar height)
    , template = 
