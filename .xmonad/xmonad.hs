@@ -42,23 +42,24 @@ import XMonad.Util.SpawnOnce
 myFont = "xft:Iosevka:regular:size=9:antialias=true:hinting=true"
 myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn.
 myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
-myBrowser = "firefox"                            -- Sets default browser.
+myBrowser = "firefox-bin"                            -- Sets default browser.
 myBorderWidth = 2                                -- Sets Border Width in pixels.
 myNormColor   = "#282828"                        -- Border color of normal windows.
 myFocusColor  = "#d8e49c"                        -- Border color of focused windows.
 -- Startup Applications
 myStartupHook = do
     spawnPipe "nitrogen --restore"   -- feh is the alternative "feh --bg-scale /directory/of/desired/background &"
-    spawnPipe "picom --experimental-backends" --Compositor
+    spawnPipe "picom" --Compositor
     spawnPipe "xmobar -x 0 /home/lampis/.xmonad/xmobarrc1"
-    spawnOnce "/usr/libexec/polkit-gnome-authentication-agent-1" -- Graphical authentication agent.
+    spawnOnce "/usr/libexec/polkit-gnome-authentication-agent-1 &" -- Graphical authentication agent.
     spawnOnce "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle" -- Switch keyboard layouts with Alt-Shift
+    spawnOnce "unclutter"
     spawnOnce "xsetroot -cursor_name Left_ptr" 
-    spawnOnce "unclutter"     -- Hides cursor when not in use.
     spawnOnce "xset s off"
     spawnOnce "xset s 0 0"
     spawnOnce "xset -dpms"
     spawnOnce "autorandr -cf" --  "xrandr --auto --output HDMI-2 --auto --left-of eDP-1"
+    spawnOnce "picom"
 -- Workspaces.
 myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "] 
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
@@ -86,8 +87,8 @@ myKeys =
      , ("M-S-a", killAll)                        -- Kill all windows on current workspace.
 --     , ("M-S-n", spawn "rofi -show file-browser-extended -file-browser-show-hidden -theme RofiFiles") -- Launches rofi File Browser.
      , ("M-S-<Return>", spawn "rofi -show drun -theme RofiApplications") -- Launches rofi App Launcher.
-     , ("M-S-<Right>", spawn "pamixer -i 10")    -- Increases Volume by 10%.
-     , ("M-S-<Left>", spawn "pamixer -d 10")     -- Decreases Volume by 10%.
+     , ("M-S-<Right>", spawn "pulseaudio-ctl up")    -- Increases Volume by 10%.
+     , ("M-S-<Left>", spawn "pulseaudio-ctl down")     -- Decreases Volume by 10%.
 -- Spawn programs keybindings.
      , ("M-<Return>", spawn (myTerminal))        -- Launches Alacritty Terminal.
      , ("M-b", spawn (myBrowser))                -- Launches Brave Web Browser.
