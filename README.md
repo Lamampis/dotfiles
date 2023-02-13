@@ -25,7 +25,7 @@ xmobar
 rofi
 
 ### Font: 
-Iosevka Nerd Font
+Iosevka
 
 ### Colorscheme: 
 Gruvbox Dark
@@ -43,7 +43,7 @@ zsh (with lambda theme)
 [SpaceVim](https://spacevim.org/)
 
 ### Compositor: 
-picom-jonaburg-git
+picom
 
 ### Wallpaper applier: 
 nitrogen
