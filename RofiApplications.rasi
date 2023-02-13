@@ -9,7 +9,14 @@ configuration {
 
 
 
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
 
+element-icon {
+    background-color: inherit;
+}
 
 
 
@@ -65,5 +72,5 @@ element {
 }
 
 element selected {
-  background-color: #3B3B;
+  background-color: #3B3B3B;
 }
