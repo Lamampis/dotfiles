@@ -6,8 +6,8 @@
 --   \//\/_/\/_/\/_/\/_/\/___/  \/___/  \/__/\/_/ \/_/                                               
 --   
 -- Fonts
-   Config { font    = "xft:Iosevka:weight=bold:pixelsize=12:antialias=true:hinting=true"
-   , additionalFonts = [ "xft:Font Awesome 5 Free Solid:pixelsize=12:antialias=true:hinting=true"]
+   Config { font    = "Iosevka Semibold 9"
+   , additionalFonts = [ "Font Awesome 5 Free Solid 10"]
 
 -- Parameters
    , bgColor = "#282828"
@@ -45,7 +45,7 @@
    , Run DiskU [("/","<fc=#3c3836,#d8e49c> <fn=1></fn> ssd: <free>  </fc>")] [] 600
 
 -- Keyboard Layout Indicator
-   , Run Kbd [("us", "<fc=#3c3836,#fbf1c7> us  </fc>") , ("gr", "<fc=#3c3836,#fbf1c7> ελ  </fc>")]
+ , Run Kbd [("us", "<fc=#3c3836,#fbf1c7> us  </fc>") , ("gr", "<fc=#3c3836,#fbf1c7> ελ  </fc>")]
 
 -- Date/Time
    , Run Date "<fc=#3c3836,#d8e49c> <fn=1></fn> %b %d %Y</fc><fc=#3c3836,#d8e49c><fn=5></fn> %H:%M </fc>" "date" 50] 
@@ -53,11 +53,11 @@
 -- Status Bar Template with custom powerline design (change VBox width depending on bar height)
    , template = 
    " <icon=haskell.xpm/> <fc=#666666>| </fc>%UnsafeStdinReader% }{\
-   \<icon=pl3.xpm/><box type=VBoth width=6 mb=0 color=#fbf1c7>%cpu%</box>\
-   \<icon=pl1.xpm/><box type=VBoth width=6 mb=0 color=#d8e49c>%multicoretemp%</box>\
-   \<icon=pl2.xpm/><box type=VBoth width=6 mb=0 color=#fbf1c7>%memory%</box>\
-   \<icon=pl1.xpm/><box type=VBoth width=6 mb=0 color=#d8e49c>%dynnetwork%</box>\
-   \<icon=pl2.xpm/><box type=VBoth width=6 mb=0 color=#fbf1c7>%LGLR%</box>\
-   \<icon=pl1.xpm/><box type=VBoth width=6 mb=0 color=#d8e49c>%disku%</box>\
-   \<icon=pl2.xpm/><box type=VBoth width=6 mb=0 color=#fbf1c7>%kbd%</box>\
-   \<icon=pl1.xpm/><box type=VBoth width=6 mb=0 color=#d8e49c>%date%</box>"}
+   \<icon=pl3.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=7 mb=0 color=#fbf1c7>%cpu%</box></box>\
+   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=7 mb=0 color=#d8e49c>%multicoretemp%</box></box>\
+   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=7 mb=0 color=#fbf1c7>%memory%</box></box>\
+   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=7 mb=0 color=#d8e49c>%dynnetwork%</box></box>\
+   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=7 mb=0 color=#fbf1c7>%LGLR%</box></box>\
+   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=7 mb=0 color=#d8e49c>%disku%</box></box>\
+   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=7 mb=0 color=#fbf1c7>%kbd%</box></box>\
+   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=7 mb=0 color=#d8e49c>%date%</box></box>"}
