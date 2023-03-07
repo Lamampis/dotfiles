@@ -12,8 +12,6 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 
 ![](desktopscreenshot.png)
 
-![](gruvbox.png)
-
 ![](gruvbox2.png)
 
 ### OS: 
