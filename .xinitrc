@@ -47,15 +47,14 @@ Name=org.freedesktop.Notifications
 Exec=/usr/bin/dunst
 
 ##DWM STUFF
-#nitrogen --restore
-#picom &
-#/usr/libexec/polkit-gnome-authentication-agent-1 &
-# hsetroot -solid '#000000'
-#xset s off
-#xset s 0 0
-#xset -dpms
-#dwmblocks &
-#setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle
-## Autostart Mullvad
-## sudo openvpn --config mullvad_it_all.conf &
-exec xmonad
+/usr/bin/lxpolkit &
+#hsetroot -solid '#000000'
+xset s off
+xset s 0 0
+xset -dpms
+xsetroot -cursor_name Left_ptr
+setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle
+dwmblocks &
+xwallpaper --stretch nascar.jpg
+#starx ~/.xinitrc <name-of-wm>
+exec "$@"
