@@ -35,7 +35,7 @@ Iosevka
 Gruvbox Dark
 
 ### Icons: 
-Papirus/Windows 11 Green Dark
+Papirus
 
 ### Terminal: 
 alacritty
@@ -50,7 +50,7 @@ zsh (with lambda theme)
 picom
 
 ### Wallpaper applier: 
-nitrogen
+xwallpaper
 
 ### Notifications: 
 Dunst
