@@ -1,4 +1,4 @@
---                                               /\ \    
+--  https://github.com/Lamampis                  /\ \    
 --   __  _   ___ ___     ___     ___      __     \_\ \   
 --  /\ \/'\/' __` __`\  / __`\ /' _ `\  /'__`\   /'_` \  
 --  \/>  <//\ \/\ \/\ \/\ \L\ \/\ \/\ \/\ \L\.\_/\ \L\ \ 
@@ -24,6 +24,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.WindowSwallowing
 -- Layouts/Modifiers.
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.ResizableTile
@@ -42,24 +43,15 @@ import XMonad.Util.SpawnOnce
 myFont = "xft:Iosevka:regular:size=9:antialias=true:hinting=true"
 myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn.
 myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
-myBrowser = "firefox-bin"                            -- Sets default browser.
+myBrowser = "firefox-bin"                        -- Sets default browser.
+myFileManager = "pcmanfm"                        -- Sets default file manager.
 myBorderWidth = 2                                -- Sets Border Width in pixels.
-myNormColor   = "#282828"                        -- Border color of normal windows.
+myNormColor   = "#282828"                        -- Border color of unfocused windows.
 myFocusColor  = "#d8e49c"                        -- Border color of focused windows.
 -- Startup Applications
 myStartupHook = do
-    spawnPipe "nitrogen --restore"   -- feh is the alternative "feh --bg-scale /directory/of/desired/background &"
-    spawnPipe "picom" --Compositor
-    spawnPipe "xmobar -x 0 /home/lampis/.xmonad/xmobarrc1"
-    spawnOnce "/usr/libexec/polkit-gnome-authentication-agent-1 &" -- Graphical authentication agent.
-    spawnOnce "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle" -- Switch keyboard layouts with Alt-Shift
-    spawnOnce "unclutter"
-    spawnOnce "xsetroot -cursor_name Left_ptr" 
-    spawnOnce "xset s off"
-    spawnOnce "xset s 0 0"
-    spawnOnce "xset -dpms"
-    spawnOnce "autorandr -cf" --  "xrandr --auto --output HDMI-2 --auto --left-of eDP-1"
-    spawnOnce "picom"
+    spawnPipe "picom --vsync"
+    spawnOnce "xmobar -x 0 ~/.xmonad/xmobarrc1"
 -- Workspaces.
 myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "] 
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
@@ -80,25 +72,23 @@ myLayoutHook = avoidStruts $ T.toggleLayouts floats $ lessBorders OnlyScreenFloa
 -- Keyboard shortcuts.
 myKeys =
 -- Base.
-     [ ("M-S-r", spawn "xmonad --recompile")     -- Recomplies xmonad.
+     [ ("M-S-r", spawn "xmonad --recompile")     -- Recompiles xmonad.
      , ("M-q", spawn "xmonad --restart")         -- Restarts xmonad.
      , ("M-S-q", io exitSuccess)                 -- Quits xmonad.
      , ("M-S-c", kill1)                          -- Kill the currently focused client.
      , ("M-S-a", killAll)                        -- Kill all windows on current workspace.
---     , ("M-S-n", spawn "rofi -show file-browser-extended -file-browser-show-hidden -theme RofiFiles") -- Launches rofi File Browser.
      , ("M-S-<Return>", spawn "rofi -show drun -theme RofiApplications") -- Launches rofi App Launcher.
      , ("M-S-<Right>", spawn "pulseaudio-ctl up")    -- Increases Volume by 10%.
-     , ("M-S-<Left>", spawn "pulseaudio-ctl down")     -- Decreases Volume by 10%.
+     , ("M-S-<Left>", spawn "pulseaudio-ctl down")   -- Decreases Volume by 10%.
 -- Spawn programs keybindings.
-     , ("M-<Return>", spawn (myTerminal))        -- Launches Alacritty Terminal.
-     , ("M-b", spawn (myBrowser))                -- Launches Brave Web Browser.
-     , ("M-d", spawn "discord")                  -- Launches DiscordApp.
-     , ("M-n", spawn "nemo")                     -- Launches Nemo file manager.
+     , ("M-<Return>", spawn (myTerminal))        -- Launches Default Terminal.
+     , ("M-b", spawn (myBrowser))                -- Launches Default Browser.
+     , ("M-n", spawn (myFileManager))            -- Launches Default file manager.
 -- Window layouts modifiers.
      , ("M-f", sendMessage (T.Toggle "floats"))  -- Toggles my 'floats' layout.
      , ("M-t", withFocused $ windows . W.sink)   -- Push floating window back to tile.
      , ("M-S-t", sinkAll)                        -- Push ALL floating windows to tile.
-     , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles Fullscreen/NB.
+     , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles Fullscreen/No Borders.
      , ("M-<Tab>", sendMessage NextLayout)       -- Switch to next layout.
 -- Space control.
      , ("M-S-i", decScreenSpacing 8)             -- Decrease screen spacing.
@@ -137,6 +127,7 @@ main = do
     xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobarrc1"
     xmonad . docks . ewmh . ewmhFullscreen $ def
      { manageHook         = myManageHook
+     , handleEventHook    = swallowEventHook (className =? "Alacritty") (return True)
      , modMask            = myModMask
      , startupHook        = myStartupHook
      , layoutHook         = myLayoutHook
