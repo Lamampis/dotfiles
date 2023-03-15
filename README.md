@@ -1,5 +1,5 @@
 # My xmonad configuration
- My mostly yoinked dotfiles for my xmonad. Feel free to copy them. 
+ My mostly yoinked dotfiles for my xmonad. This repo is mostly meant for me to store my configs for easy access but feel free to use them.
 
 ### Prerequisites: 
 
@@ -35,7 +35,7 @@ Iosevka
 Gruvbox Dark
 
 ### Icons: 
-Papirus
+Windows 11
 
 ### Terminal: 
 alacritty
