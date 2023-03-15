@@ -17,7 +17,7 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 ![](1678903064.png)
 
 ### OS: 
-Arch Linux/Gentoo Linux
+Gentoo Linux
 
 ### Window Manager: 
 xmonad 
@@ -54,6 +54,9 @@ xwallpaper
 
 ### Notifications: 
 Dunst
+
+### Misc software that I use:
+meh, mpv, maim, MuPDF, pcmanfm, OBS, Vscodium
 
 ### Contact Info:
 
