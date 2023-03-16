@@ -29,8 +29,8 @@ import XMonad.Hooks.WindowSwallowing
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.LimitWindows
-import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders
+import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.Renamed
 import XMonad.Layout.Spacing
 import XMonad.Layout.ToggleLayouts as T
@@ -48,18 +48,18 @@ myFileManager = "pcmanfm"                        -- Sets default file manager.
 myBorderWidth = 2                                -- Sets Border Width in pixels.
 myNormColor   = "#282828"                        -- Border color of unfocused windows.
 myFocusColor  = "#d8e49c"                        -- Border color of focused windows.
--- Startup Applications
+-- Startup Applications (the rest are on my .xinitrc)
 myStartupHook = do
     spawnPipe "picom --vsync"
-    spawnOnce "xmobar -x 0 ~/.xmonad/xmobarrc1"
+    spawnOnce "unclutter"
 -- Workspaces.
 myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "] 
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>" -- i have no idea how this works
     where i = fromJust $ M.lookup ws myWorkspaceIndices
 -- Layouts config.
-tall     = renamed [Replace "Tall"]
-           $ limitWindows 10
+tall = renamed [Replace "Tall"]
+           $ limitWindows 6
            $ spacingRaw False (Border 0 0 0 0) True (Border 10 10 10 10) True
            $ ResizableTall 1 (3/100) (10/20) []
 monocle  = renamed [Replace "Monocle"]
@@ -69,7 +69,7 @@ floats   = renamed [Replace "Float"]
 myLayoutHook = avoidStruts $ T.toggleLayouts floats $ lessBorders OnlyScreenFloat
              $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where  myDefaultLayout = (tall ||| smartBorders monocle ||| floats)
--- Keyboard shortcuts.
+-- Keybindigs.
 myKeys =
 -- Base.
      [ ("M-S-r", spawn "xmonad --recompile")     -- Recompiles xmonad.
@@ -77,36 +77,35 @@ myKeys =
      , ("M-S-q", io exitSuccess)                 -- Quits xmonad.
      , ("M-S-c", kill1)                          -- Kill the currently focused client.
      , ("M-S-a", killAll)                        -- Kill all windows on current workspace.
-     , ("M-S-<Return>", spawn "rofi -show drun -theme RofiApplications") -- Launches rofi App Launcher.
-     , ("M-S-<Right>", spawn "pulseaudio-ctl up")    -- Increases Volume by 10%.
-     , ("M-S-<Left>", spawn "pulseaudio-ctl down")   -- Decreases Volume by 10%.
 -- Spawn programs keybindings.
      , ("M-<Return>", spawn (myTerminal))        -- Launches Default Terminal.
      , ("M-b", spawn (myBrowser))                -- Launches Default Browser.
      , ("M-n", spawn (myFileManager))            -- Launches Default file manager.
+     , ("M-S-s", spawn "maim -s ~/Pictures/$(date +%s).png") --Uses maim to take a screenshot of the selected area.
+     , ("M-S-<Right>", spawn "pulseaudio-ctl up")    -- Increases Volume by 10%.
+     , ("M-S-<Left>", spawn "pulseaudio-ctl down")   -- Decreases Volume by 10%.
+     ,("M-S-<Return>", spawn "rofi -show drun -theme RofiApplications") -- Launches rofi App Launcher.
 -- Window layouts modifiers.
-     , ("M-f", sendMessage (T.Toggle "floats"))  -- Toggles my 'floats' layout.
      , ("M-t", withFocused $ windows . W.sink)   -- Push floating window back to tile.
      , ("M-S-t", sinkAll)                        -- Push ALL floating windows to tile.
      , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles Fullscreen/No Borders.
      , ("M-<Tab>", sendMessage NextLayout)       -- Switch to next layout.
--- Space control.
-     , ("M-S-i", decScreenSpacing 8)             -- Decrease screen spacing.
-     , ("M-S-u", incScreenSpacing 8)             -- Increase screen spacing.
 -- Resizing.
-     , ("M-h", sendMessage Shrink)               -- Shrink horiz window width.
-     , ("M-l", sendMessage Expand)               -- Expand horiz window width.
-     , ("M-j", sendMessage MirrorShrink)         -- Shrink vert window width.
-     , ("M-k", sendMessage MirrorExpand)         -- Expand vert window width.
+     , ("M-S-i", decScreenSpacing 8)             -- Increase screen spacing.
+     , ("M-S-u", incScreenSpacing 8)             -- Decrease screen spacing.
+     , ("M-S-h", sendMessage Shrink)             -- Shrink horiz window width.
+     , ("M-S-j", sendMessage MirrorShrink)       -- Shrink vert window width.
+     , ("M-S-k", sendMessage MirrorExpand)       -- Expand vert window width.
+     , ("M-S-l", sendMessage Expand)             -- Expand horiz window width.
 -- Navigation.
      , ("M-m", windows W.focusMaster)            -- Move focus to the master window.
      , ("M-S-m", windows W.swapMaster)           -- Swap the focused window and the master window.
-     , ("M-S-j", windows W.focusDown)            -- Move focus to the next window.
-     , ("M-S-k", windows W.focusUp)              -- Move focus to the prev window.
-     , ("M-S-h", windows W.swapDown)             -- Swap focused window with next window.
-     , ("M-S-l", windows W.swapUp)               -- Swap focused window with prev window.
+     , ("M-h", windows W.focusUp)                -- Move focus to prev window.
+     , ("M-j", windows W.swapUp)               -- Swap focused windows with next window.
+     , ("M-k", windows W.swapDown)                 -- Swap focused window with prev window.
+     , ("M-l", windows W.focusDown)              -- Move focus to next window.
      , ("M-<Backspace>", promote)                -- Promote focused window to master.
-     , ("M-S-<Tab>", rotSlavesDown)]             -- Rotate all windows except master and keep focus in place.
+     , ("M-S-<Backspace>", rotSlavesDown)]       -- Rotate all windows except master and keep focus in place.
 -- Set window properties.
 myManageHook = composeAll                           
      [ className =? "control"         --> doFloat
@@ -114,7 +113,6 @@ myManageHook = composeAll
      , className =? "file_progress"   --> doFloat
      , className =? "dialog"          --> doFloat
      , className =? "download"        --> doFloat
-     , className =? "Gimp"            --> doFloat
      , className =? "Update"          --> doFloat
      , className =? "notification"    --> doFloat
      , className =? "pinentry-gtk-2"  --> doFloat
@@ -127,7 +125,7 @@ main = do
     xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobarrc1"
     xmonad . docks . ewmh . ewmhFullscreen $ def
      { manageHook         = myManageHook
-     , handleEventHook    = swallowEventHook (className =? "Alacritty") (return True)
+     , handleEventHook    = swallowEventHook (className =? myTerminal) (return True)
      , modMask            = myModMask
      , startupHook        = myStartupHook
      , layoutHook         = myLayoutHook
