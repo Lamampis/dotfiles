@@ -56,5 +56,5 @@ xsetroot -cursor_name Left_ptr
 setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle
 dwmblocks &
 xwallpaper --stretch nascar.jpg
-#starx ~/.xinitrc <name-of-wm>
+#startx ~/.xinitrc <name-of-wm>
 exec "$@"
