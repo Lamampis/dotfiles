@@ -56,7 +56,7 @@ xwallpaper
 Dunst
 
 ### Misc software that I use:
-meh, mpv, maim, MuPDF, pcmanfm, OBS, Vscodium
+meh, mpv, maim, MuPDF, pcmanfm, rover, OBS, Vscodium
 
 ### Contact Info:
 
