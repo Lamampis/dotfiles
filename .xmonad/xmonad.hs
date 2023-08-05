@@ -40,7 +40,7 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 -- Defaults
-myFont = "xft:Iosevka:regular:size=9:antialias=true:hinting=true"
+myFont = "xft:Monocraft:regular:size=9:antialias=true:hinting=true"
 myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn.
 myTerminal = "alacritty"                         -- Sets default Terminal Emulator.
 myBrowser = "firefox-bin"                        -- Sets default browser.
@@ -81,6 +81,7 @@ myKeys =
      , ("M-<Return>", spawn (myTerminal))        -- Launches Default Terminal.
      , ("M-b", spawn (myBrowser))                -- Launches Default Browser.
      , ("M-n", spawn (myFileManager))            -- Launches Default file manager.
+     , ("M-d", spawn "ELECTRON_ENABLE_STACK_DUMPING=true discord")
      , ("M-S-s", spawn "maim -s ~/Pictures/$(date +%s).png") --Uses maim to take a screenshot of the selected area.
      , ("M-S-<Right>", spawn "pulseaudio-ctl up")    -- Increases Volume by 10%.
      , ("M-S-<Left>", spawn "pulseaudio-ctl down")   -- Decreases Volume by 10%.
