@@ -1,101 +1,145 @@
-[colors]
-	background = "#282828"
-	foreground = "#d8e49c"
+# See dunst(5) for all configuration options
 
 [global]
     ### Display ###
 
     monitor = 0
+
     follow = mouse
 
-#   geometry = "375x20-21+38"
-    geometry = "375x20-28+52"
+    ### Geometry ###
+
+    width = 375
+
+    height = 300
+
+    origin = top-right
+
+    offset = 10x50
+
+    scale = 0
+
+    notification_limit = 20
+
+    ### Progress bar ###
+
+    progress_bar = true
+
+    progress_bar_height = 10
+
+    progress_bar_frame_width = 1
+
+    progress_bar_min_width = 150
+
+    progress_bar_max_width = 300
+
+    progress_bar_corner_radius = 0
+
+    icon_corner_radius = 0
+
     indicate_hidden = yes
-    shrink = no
+
     transparency = 0
-    notification_height = 0
+
     separator_height = 3
+
     padding = 22
+
     horizontal_padding = 24
+
+    text_icon_padding = 0
+
     frame_width = 2
 
     frame_color = "#FFF5HB"
-    separator_color = auto
+
+    gap_size = 0
+
+    separator_color = frame
+
     sort = yes
-    idle_threshold = 120
-    mouse_right_click = close_all
-    
 
     ### Text ###
+
     font = Iosevka 9
+
     line_height = 0
 
     markup = full
 
-    # The format of the message.  Possible variables are:
-    #   %a  appname
-    #   %s  summary
-    #   %b  body
-    #   %i  iconname (including its path)
-    #   %I  iconname (without its path)
-    #   %p  progress value if set ([  0%] to [100%]) or nothing
-    #   %n  progress value if set without any extra characters
-    #   %%  Literal %
-    # Markup is allowed
-    format = "<b>%s </b>\n%b"
+    format = "<b>%s</b>\n%b"
+
     alignment = left
+
     vertical_alignment = center
+
     show_age_threshold = 60
-    word_wrap = no
+
     ellipsize = middle
+
     ignore_newline = no
+
     stack_duplicates = true
+
     hide_duplicate_count = false
+
     show_indicators = yes
 
     ### Icons ###
+
+    enable_recursive_icon_lookup = true
+
+    icon_theme = Mint-Y-Sand
+
     icon_position = left
-    max_icon_size = 64
-    icon_path = .icons/flattrcolor/status/24:.icons/flattrcolor/devices/48:.icons/flattrcolor/apps/scalable:.icons/flattrcolor/actions/scalable
+
+    min_icon_size = 64
+
+    max_icon_size = 128
+
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     ### History ###
+
     sticky_history = yes
-    history_length = 50
+
+    history_length = 20
 
     ### Misc/Advanced ###
+
     dmenu = /usr/bin/rofi -show run -p dunst:
+
     browser = /usr/bin/firefox
+
     always_run_script = true
+
     title = Dunst
+
     class = Dunst
-    startup_notification = false
+
+    corner_radius = 0
+
+    ignore_dbusclose = false
+
     force_xinerama = true
-    verbosity = mesg
 
-[experimental]
-    per_monitor_dpi = false
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
 
-[shortcuts]
-    close = ctrl+shift+space
-    history = ctrl+space
-    #close_all = ctrl+shift+space
-    context = ctrl+shift+period
 
 [urgency_low]
-    background = colors.background
-    foreground = colors.foreground
-    frame_color = "#282828"
+    background = "#282828"
+    foreground = "#d8e49c"
     timeout = 10
 
 [urgency_normal]
-    background = colors.background
-    foreground = colors.foreground
-    frame_color = "#282828"
+    background = "#282828"
+    foreground = "#d8e49c"
     timeout = 10
 
 [urgency_critical]
-    background = colors.background
-    foreground = colors.foreground
-    frame_color = "#282828"
-    timeout = 10
-
+    background = "#282828"
+    foreground = "#d8e49c"
+    frame_color = "#FFF5HB"
+    timeout = 0
