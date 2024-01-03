@@ -95,7 +95,7 @@
 
     min_icon_size = 64
 
-    max_icon_size = 128
+    max_icon_size = 64
 
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
