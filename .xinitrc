@@ -46,15 +46,14 @@ fi
 Name=org.freedesktop.Notifications
 Exec=/usr/bin/dunst
 
-##DWM STUFF
-/usr/bin/lxpolkit &
+##Start
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 #hsetroot -solid '#000000'
 xset s off
 xset s 0 0
 xset -dpms
 xsetroot -cursor_name Left_ptr
 setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle
-dwmblocks &
-xwallpaper --stretch nascar.jpg
+feh --bg-scale crt.png
 #startx ~/.xinitrc <name-of-wm>
 exec "$@"
