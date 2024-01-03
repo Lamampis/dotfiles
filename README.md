@@ -32,7 +32,7 @@ rofi
 Iosevka
 
 ### Colorscheme: 
-Gruvbox Dark
+[Gruvbox Dark] (https://github.com/jmattheis/gruvbox-dark-gtk)
 
 ### Icons: 
 Mint-Y Legacy
