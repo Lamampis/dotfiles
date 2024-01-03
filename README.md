@@ -35,13 +35,13 @@ Iosevka
 Gruvbox Dark
 
 ### Icons: 
-Windows 11
+Mint-Y Legacy
 
 ### Terminal: 
-alacritty
+kitty
 
 ### Shell: 
-zsh (with lambda theme)
+fish
 
 ### Editor:
 [SpaceVim](https://spacevim.org/)
@@ -50,13 +50,13 @@ zsh (with lambda theme)
 picom
 
 ### Wallpaper applier: 
-xwallpaper
+feh
 
 ### Notifications: 
 Dunst
 
 ### Misc software that I use:
-meh, mpv, maim, MuPDF, pcmanfm, rover, OBS, Vscodium
+mpv, maim, MuPDF, nemo, rover, OBS, Vscodium
 
 ### Contact Info:
 
