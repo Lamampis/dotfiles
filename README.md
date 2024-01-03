@@ -6,7 +6,7 @@
  Xmonad, xmonad-contrib and xmobar from the Arch repos are old and the git versions from the AUR seem to cause problems.
 I recommend installing these packages with stack, [here's how.](https://brianbuccola.com/how-to-install-xmonad-and-xmobar-via-stack/)
 
-On Gentoo Linux, compile xmobar with the xpm and xft USE flags. 
+On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 
 ### Screenshots
 
@@ -56,7 +56,7 @@ feh
 Dunst
 
 ### Misc software that I use:
-mpv, maim, MuPDF, nemo, rover, OBS, Vscodium
+mpv, maim, MuPDF, nemo, OBS, Vscodium
 
 ### Contact Info:
 
