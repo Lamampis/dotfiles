@@ -1,0 +1,68 @@
+--                          /\ \                       
+--   __  _   ___ ___     ___\ \ \____     __     _ __  
+--  /\ \/'\/' __` __`\  / __`\ \ '__`\  /'__`\  /\`'__\
+--  \/>  <//\ \/\ \/\ \/\ \L\ \ \ \L\ \/\ \L\.\_\ \ \/ 
+--   /\_/\_\ \_\ \_\ \_\ \____/\ \_,__/\ \__/.\_\\ \_\ 
+--   \//\/_/\/_/\/_/\/_/\/___/  \/___/  \/__/\/_/ \/_/                                            
+-- 
+-- Fonts
+   Config { font    = "xft:Iosevka Nerd Font:weight=bold:pixelsize=11:antialias=true:hinting=true"
+   , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true"
+   , "xft:Font Awesome 5 Free Solid:pixelsize=11"]
+
+-- Parameters
+   , bgColor = "#201c2c"
+   , position = TopSize C 100 26
+   , lowerOnStart = True
+   , hideOnStart = False
+   , allDesktops = True
+   , sepChar = "%"
+   , alignSep = "}{"
+   , persistent = True
+   , iconRoot = "/home/lampis/.config/xmonad/xpm/"
+   , commands = [
+
+-- Workspaces Indicator (see xmonad.hs)
+    Run UnsafeStdinReader
+
+-- Cpu Usage 
+   , Run Cpu ["-t", "<fn=2>\xf108</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
+
+-- CPU Core Temperature Indicator
+   , Run MultiCoreTemp
+   ["-t", "<fn=2></fn> <avg> °C",
+    "-L", "20", "-H", "80"] 20
+
+-- RAM Usage Indicator
+   , Run Memory ["-t", "<fn=2></fn>  <used>mb: (<usedratio>%)"] 20
+
+-- Network
+   , Run DynNetwork     [ "--template" , " <tx>kB/s|<rx>kB/s"
+   , "--Low"      , "1000"       -- units: B/s
+   , "--low"      , "#ecbe7b"] 10
+
+-- Weather Indicator
+   , Run WeatherX "LGLR"   [ ]
+   ["--template", "<fn=2> </fn> <tempC> °C"] 10
+
+-- Free Available Disk Space
+   , Run DiskU [("/", "<fn=2></fn>  ssd: <free>")] [] 60
+
+-- Keyboard Layout Indicator
+   , Run Kbd            [ ("us(dvorak)" , "<fc=#DE3163>DV</fc>")
+   , ("us"         , "<fc=#73d0ff>us</fc>")
+   , ("gr"         , "<fc=#73d0ff>ελ</fc>")]
+
+-- Date/Time
+   , Run Date "<fc=#bae67e><fn=5> </fn> %b %d %Y</fc><fc=#bae67e><fn=5></fn> %H:%M </fc>" "date" 50] 
+
+-- Status Bar Template
+   , template = " <icon=haskell.xpm/> <fc=#666666>| </fc>%UnsafeStdinReader% }{\
+   \<fc=#ffd580>%cpu%</fc>      \
+   \<fc=#212733></fc><fc=#73d0ff> %multicoretemp%</fc>      \
+   \<fc=#212733></fc><fc=#ff79c6> %memory%</fc>      \
+   \<fc=#212733></fc><fc=#ffd580> <fn=2></fn>%dynnetwork%</fc><fc=#bae67e><fn=6></fn></fc>      \
+   \<fc=#212733></fc><fc=#73d0ff> %LGLR%</fc>      \
+   \<fc=#212733></fc><fc=#ff79c6> %disku%</fc>     \
+   \<fc=#51afef>%kbd%</fc>     \
+   \<fc=#ffd580>%date%</fc>  "}
