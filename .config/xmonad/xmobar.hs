@@ -52,7 +52,6 @@
    , "-o"	, "<fc=#3c3836,#fbf1c7><left>% (<timeleft>)  </fc>"
    , "-O"	, "<fc=#3c3836,#fbf1c7><left>%++  </fc>"] 100
 
-
 -- Date/Time
    , Run Date "<fc=#3c3836,#fbf1c7> <fn=1></fn> %b %d %Y</fc><fc=#3c3836,#fbf1c7><fn=5></fn> %H:%M </fc>" "date" 50] 
 
