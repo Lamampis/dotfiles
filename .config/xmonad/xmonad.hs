@@ -40,7 +40,7 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 -- Defaults
-myFont = "xft:Monocraft:regular:size=9:antialias=true:hinting=true"
+myFont = "xft:Iosevka:regular:size=9:antialias=true:hinting=true"
 myModMask = mod4Mask                             -- Sets Mod Key to Super/Win/Fn.
 myTerminal = "kitty"                         -- Sets default Terminal Emulator.
 myBrowser = "firefox-bin"                        -- Sets default browser.
