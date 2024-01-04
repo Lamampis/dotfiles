@@ -123,7 +123,7 @@ myManageHook = composeAll
      , isFullscreen -->  doFullFloat ] 
 -- Main.
 main = do
-    xmproc0 <- spawnPipe "xmobar -x 0 ~/.config/xmonad/xmobarrc1"
+    xmproc0 <- spawnPipe "xmobar -x 0 ~/.config/xmonad/xmobar.hs"
     xmonad . docks . ewmh . ewmhFullscreen $ def
      { manageHook         = myManageHook
      , handleEventHook    = swallowEventHook (className =? myTerminal) (return True)
