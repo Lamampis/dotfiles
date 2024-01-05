@@ -6,7 +6,7 @@
 --   \//\/_/\/_/\/_/\/_/\/___/  \/___/  \/__/\/_/ \/_/                                               
 --   
 -- Fonts
-   Config { font    = "Iosevka Term 9"
+   Config { font    = "Iosevka Term 9 Bold"
    , additionalFonts = [ "Font Awesome 6 Free Solid 8"]
 
 -- Parameters
