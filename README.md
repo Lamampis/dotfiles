@@ -10,7 +10,7 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 
 ### Screenshots
 
-![](desktopscreenshot.png)
+![](Images/desktopscreenshot.png)
 
 ![](1678902994.png)
 
