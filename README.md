@@ -12,9 +12,9 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 
 ![](Images/desktopscreenshot.png)
 
-![](1678902994.png)
+![](Images/1678902994.png)
 
-![](1678903064.png)
+![](Images/1678903064.png)
 
 ### OS: 
 Gentoo Linux
