@@ -11,6 +11,7 @@
 
 -- Parameters
    , bgColor = "#282828"
+   , fgColor = "#3c3836"
    , position = TopSize C 100 26 --Max Bar size is 31 in order for the powerline effect to work
    , lowerOnStart = False
    , allDesktops = True
@@ -24,46 +25,45 @@
    Run UnsafeStdinReader
 
 -- Cpu Usage 
-   , Run Cpu ["-t","<fc=#3c3836,#fbf1c7> <fn=1>\xf108</fn> cpu: (<total>%)  </fc>"] 20
+   , Run Cpu ["-t"," <fn=1>\xf108</fn> cpu: (<total>%)  "] 20
 
 -- CPU Core Temperature Indicator
    , Run MultiCoreTemp
-   ["-t","<fc=#3c3836,#d8e49c> <fn=1></fn> <avg> °C  </fc>", "-L", "20", "-H", "80"] 30
+   ["-t"," <fn=1></fn> <avg> °C  ", "-L", "20", "-H", "80"] 30
 
 -- RAM Usage Indicator
-   , Run Memory ["-t","<fc=#3c3836,#fbf1c7> <fn=1></fn> <used>mb: (<usedratio>%)  </fc>"] 20
+   , Run Memory ["-t"," <fn=1></fn> <used>mb: (<usedratio>%)  "] 20
 
 -- Network
-   , Run DynNetwork ["-t","<fc=#3c3836,#d8e49c> <fn=1></fn> <tx>kB/s|<rx>kB/s  </fc>"
-   , "--Low"      , "1000"       -- units: B/s
-   , "--low"      , "#3c3836,#d8e49c"] 15
+   , Run DynNetwork ["-t"," <fn=1></fn> <rx>.0kB/s  "] 15
 
 -- Weather Indicator
-   , Run WeatherX "LGLR" [] ["-t","<fc=#3c3836,#fbf1c7> <fn=1></fn> <tempC> °C  </fc>"] 600
+   , Run WeatherX "LGLR" [] ["-t"," <fn=1></fn> <tempC> °C  "] 600
 
 -- Free Available Disk Space
-   , Run DiskU [("/","<fc=#3c3836,#d8e49c> <fn=1></fn> ssd: <free>  </fc>")] [] 600
+   , Run DiskU [("/"," <fn=1></fn> ssd: <free>  ")] [] 600
 
 -- Keyboard Layout Indicator
-   , Run Kbd [("us", "<fc=#3c3836,#d8e49c> us  </fc>") , ("gr", "<fc=#3c3836,#d8e49c> ελ  </fc>")]
+   , Run Kbd [("us", " us  ") , ("gr", " ελ  ")]
 
 -- Battery information.
    , Run Battery ["--template" , "<fc=#3c3836,#fbf1c7><fn=1>  </fn><acstatus></fc>" , "--" 
-   , "-o"	, "<fc=#3c3836,#fbf1c7><left>% (<timeleft>)  </fc>"
-   , "-O"	, "<fc=#3c3836,#fbf1c7><left>%++  </fc>"] 100
+   , "-o"	, "<left>% | (<timeleft>) "
+   , "-i"	, "<left>% | Full  "
+   , "-O"	, "<left>%+ | (<timeleft>) "] 50
 
 -- Date/Time
-   , Run Date "<fc=#3c3836,#fbf1c7> <fn=1></fn> %b %d %Y</fc><fc=#3c3836,#fbf1c7><fn=5></fn> %H:%M </fc>" "date" 50] 
+   , Run Date "<fn=1></fn> %b %d %Y<fn=5></fn> %H:%M " "date" 50] 
 
 -- Status Bar Template with custom powerline design (change VBox width depending on bar height)
    , template = 
    " <icon=haskell.xpm/> <fc=#666666>| </fc>%UnsafeStdinReader% }{\
-   \<icon=pl3.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%cpu%</box></box>\
-   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%multicoretemp%</box></box>\
-   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%memory%</box></box>\
-   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%dynnetwork%</box></box>\
-   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%LGLR%</box></box>\
-   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%disku%</box></box>\
-   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%battery%</box></box>\
-   \<icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%kbd%</box></box>\
-   \<icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%date%</box></box>"
+   \<fc=#3c3836,#fbf1c7><icon=pl3.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%cpu%</box></box></fc>\
+   \<fc=#3c3836,#d8e49c><icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%multicoretemp%</box></box></fc>\
+   \<fc=#3c3836,#fbf1c7><icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%memory%</box></box></fc>\
+   \<fc=#3c3836,#d8e49c><icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%dynnetwork%</box></box></fc>\
+   \<fc=#3c3836,#fbf1c7><icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%LGLR%</box></box></fc>\
+   \<fc=#3c3836,#d8e49c><icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%disku%</box></box></fc>\
+   \<fc=#3c3836,#fbf1c7><icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%battery%</box></box></fc>\
+   \<fc=#3c3836,#d8e49c><icon=pl1.xpm/><box type=Top width=6 mb=0 color=#d8e49c><box type=Bottom width=8 mb=0 color=#d8e49c>%kbd%</box></box></fc>\
+   \<fc=#3c3836,#fbf1c7><icon=pl2.xpm/><box type=Top width=6 mb=0 color=#fbf1c7><box type=Bottom width=8 mb=0 color=#fbf1c7>%date%</box></box></fc>"
