@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+
+    "modules-left": [ "hyprland/workspaces","custom/line", "hyprland/window"],
+    "modules-right": ["image#pl3", "cpu", "image#pl1", "memory", "image#pl2", "disk", "image#pl1", "pulseaudio", "image#pl2", "battery", "image#pl1", "hyprland/language", "image#pl2", "clock"],
+    "hyprland/mode": {
+        "format": " {}"
+    },
+   "image#pl1": {
+	"path": "/home/lampis/.config/waybar/icons/pl1.xpm",
+	"size": 24,
+},
+   "image#pl2": {
+	"path": "/home/lampis/.config/waybar/icons/pl2.xpm",
+	"size": 24,
+},
+   "image#pl3": {
+	"path": "/home/lampis/.config/waybar/icons/pl3.xpm",
+	"size": 24,
+    },
+   "image#pl4": {
+	"path": "/home/lampis/.config/waybar/icons/pl4.xpm",
+	"size": 24,
+    },
+    "hyprland/workspaces": {
+        "persistent-workspaces": {"*": 9},
+        "format": "{name}",
+        "disable-scroll": true
+    },
+        "cpu": {
+        "format": "   cpu: {usage}%  ",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+	},
+    "hyprland/window": {
+        "max-length": 45,
+        "tooltip": false,
+	"format": "|  {title}",
+    },
+     "hyprland/language": {
+	"format": "  {short} {variant}   ",
+    },
+    "custom/line": {
+        "format": "|  Tall  ",
+        "tooltip": false,
+    },
+    "clock": {
+        "format": "  {:%a %d %b %H:%M} ",
+        "tooltip": false
+    },
+    "disk": {
+        "interval": 30,
+        "format": "   {free}  ",
+    },
+    "battery": {
+        "format": "  {icon} {capacity}%  ",
+        "format-alt": "  {icon} {time}  ",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "  {icon} {capacity}%+  ",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "memory": {
+    "interval": 30,
+    "format": "   {used:0.1f}G/{total:0.1f}G  "
+    },
+    "pulseaudio": {
+        "format": "  {icon} {volume}%  ",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "phone": [" ", " ", " "],
+            "default": ["", "", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+}
