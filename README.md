@@ -1,5 +1,6 @@
-# My xmonad configuration
- My mostly yoinked dotfiles for my xmonad. This repo is mostly meant for me to store my configs for easy access but feel free to use them.
+# My xmonad and hyprland configuration
+ My mostly yoinked dotfiles for my xmonad. This repo is mostly meant for me to store my configs for easy access but feel free to use them. 
+I recently switched over to hyprland, it's a great window manager. My configs for both window managers are very similar.
 
 ### Prerequisites: 
 
@@ -26,13 +27,13 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 Gentoo Linux
 
 ### Window Manager: 
-xmonad 
+xmonad, hyprland
 
 ### Bar: 
-xmobar
+xmobar, waybar
 
 ### Prompt: 
-rofi
+rofi, wofi
 
 ### Font: 
 Iosevka
@@ -50,19 +51,19 @@ kitty
 fish
 
 ### Editor:
-[SpaceVim](https://spacevim.org/)
+Vim
 
 ### Compositor: 
 picom
 
 ### Wallpaper applier: 
-feh
+feh, hyprpaper
 
 ### Notifications: 
 Dunst
 
 ### Misc software that I use:
-mpv, maim, MuPDF, nemo, OBS, Vscodium
+mpv, maim, MuPDF, nemo, OBS, Vscodium, Obsidian
 
 ### Contact Info:
 
