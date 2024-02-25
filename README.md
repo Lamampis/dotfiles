@@ -10,11 +10,15 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 
 ### Screenshots
 
+## XMonad
+
 ![](Images/desktopscreenshot.png)
 
 ![](Images/1678902994.png)
 
 ![](Images/1678903064.png)
+
+## Hyprland
 
 ![](Images/20240225_08h58m41s_grim.png)
 
