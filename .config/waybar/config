@@ -3,7 +3,7 @@
     "position": "top",
     "height": 24,
 
-    "modules-left": [ "hyprland/workspaces","custom/line", "hyprland/window"],
+    "modules-left": [ "hyprland/workspaces", "custom/layout", "hyprland/window"],
     "modules-right": ["image#pl3", "cpu", "image#pl1", "memory", "image#pl2", "disk", "image#pl1", "pulseaudio", "image#pl2", "battery", "image#pl1", "hyprland/language", "image#pl2", "clock"],
     "hyprland/mode": {
         "format": " {}"
@@ -39,13 +39,13 @@
     "hyprland/window": {
         "max-length": 45,
         "tooltip": false,
-	"format": "|  {title}",
+	"format": " |  {title}",
     },
      "hyprland/language": {
 	"format": "  {short} {variant}   ",
     },
-    "custom/line": {
-        "format": "|  Tall  ",
+    "custom/layout": {
+        "format": "|  Tall ",
         "tooltip": false,
     },
     "clock": {
@@ -61,6 +61,7 @@
         "format-alt": "  {icon} {time}  ",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "  {icon} {capacity}%+  ",
+        "format-alt-charging": "  {icon} {capacity}%+  ",
         "interval": 30,
         "states": {
             "warning": 25,
