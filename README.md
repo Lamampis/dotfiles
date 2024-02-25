@@ -7,10 +7,10 @@ I recently switched over to hyprland, it's a great window manager. My configs fo
  Xmonad, xmonad-contrib and xmobar from the Arch repos are old and the git versions from the AUR seem to cause problems.
 I recommend installing these packages with stack, [here's how.](https://brianbuccola.com/how-to-install-xmonad-and-xmobar-via-stack/)
 
-On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
+On Gentoo Linux, compile xmobar with the `xpm` and `xft` USE flags.
 
 ## Kernel
- I use a custom kernel for my Thinkpad X220 Gentoo installation, it uses LZ4 to compress the kernel and the initramfs. For me, I have to add the line compress="lz4" to the file /etc/dracut.conf.d/myflags.conf and compile sys-kernel/installkernel with the dracut USE flag.
+ I use a custom kernel for my Thinkpad X220 Gentoo installation, it uses LZ4 to compress the kernel and the initramfs. For me, I have to add the line `compress="lz4"` to the file `/etc/dracut.conf.d/myflags.conf` and compile `sys-kernel/installkernel` with the `dracut` USE flag.
 
 ### Screenshots
 
