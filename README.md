@@ -16,7 +16,7 @@ On Gentoo Linux, compile xmobar with the xpm and xft USE flags.
 
 ![](Images/1678903064.png)
 
-![](Images/20240225_08h58m41s_grim.png.png)
+![](Images/20240225_08h58m41s_grim.png)
 
 ### OS: 
 Gentoo Linux
