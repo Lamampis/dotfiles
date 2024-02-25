@@ -10,7 +10,7 @@ I recommend installing these packages with stack, [here's how.](https://brianbuc
 On Gentoo Linux, compile xmobar with the `xpm` and `xft` USE flags.
 
 ## Kernel
- I use a custom kernel for my Thinkpad X220 Gentoo installation, it uses LZ4 to compress the kernel and the initramfs. For me, I have to add the line `compress="lz4"` to the file `/etc/dracut.conf.d/myflags.conf` and compile `sys-kernel/installkernel` with the `dracut` USE flag.
+ I use a custom kernel for my Thinkpad X220 Gentoo installation, it uses LZ4 to compress the kernel and the initramfs. For me, I have to add the line `compress="lz4"` to the file `/etc/dracut.conf.d/myflags.conf` and compile `sys-kernel/installkernel` with the `dracut` USE flag. It might slightly improve battery life over the dist kernel.
 
 ### Screenshots
 
