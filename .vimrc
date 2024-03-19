@@ -22,6 +22,9 @@ call plug#begin()
  Plug 'preservim/nerdtree'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
+ Plug 'ap/vim-css-color'
+ Plug 'terryma/vim-smooth-scroll'
+ Plug 'chrisbra/Colorizer'
 call plug#end()
 let g:airline_theme='minimalist'
 " air-line
@@ -30,7 +33,18 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+set keymap=greek_utf-8
+set iminsert=0
+set imsearch=-1
 
+augroup Mkdir
+  autocmd!
+  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
+augroup END
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
