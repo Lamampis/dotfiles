@@ -57,16 +57,14 @@
         "format": "   {free}  ",
     },
     "battery": {
+        "bat": "BAT0",
         "format": "  {icon} {capacity}%  ",
         "format-alt": "  {icon} {time}  ",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "  {icon} {capacity}%+  ",
-        "format-alt-charging": "  {icon} {capacity}%+  ",
-        "interval": 30,
-        "states": {
-            "warning": 25,
-            "critical": 10
-        },
+        "format-full": "  {icon} Charged  ",
+        "format-state-fully-charged": "  {icon} Charged  ",
+        "interval": 20,
         "tooltip": false
     },
     "memory": {
@@ -77,7 +75,7 @@
         "format": "  {icon} {volume}%  ",
         "format-alt": "{volume} {icon}",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": " ",
         "format-icons": {
             "phone": [" ", " ", " "],
             "default": ["", "", ""]
