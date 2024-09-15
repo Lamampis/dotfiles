@@ -30,7 +30,6 @@ window#waybar > box {
 }
 #workspaces button {
     color:      #d8e49c;
-
     border-left: 3px solid #262626;
     border-right: 3px solid #262626;
     border-top: 2px solid #d8e49c;
@@ -58,3 +57,7 @@ window#waybar > box {
     background: #fbf1c7;
     color: #262626;
 }
+image.focused {
+	color: #000000;
+}
+

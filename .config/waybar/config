@@ -42,7 +42,7 @@
 	"format": " |  {title}",
     },
      "hyprland/language": {
-	"format": "  {short} {variant}   ",
+	"format": "  {short} {variant}  ",
     },
     "custom/layout": {
         "format": "|  Tall ",
@@ -58,12 +58,13 @@
     },
     "battery": {
         "bat": "BAT0",
+	"full-at": 100,
         "format": "  {icon} {capacity}%  ",
         "format-alt": "  {icon} {time}  ",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "  {icon} {capacity}%+  ",
-        "format-full": "  {icon} Charged  ",
-        "format-state-fully-charged": "  {icon} Charged  ",
+        "format-full": "  {icon} Full  ",
+        "format-state-fully-charged": "  {icon} Full  ",
         "interval": 20,
         "tooltip": false
     },
