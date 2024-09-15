@@ -1,9 +1,14 @@
-if status is-interactive
+﻿if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set fish_greeting
+
 export EDITOR="/usr/bin/vim"
-alias ihatemylife="doas emerge -avuDt --changed-use --with-bdeps=y @world && doas emerge nvidia-drivers && doas grub-mkconfig -o /boot/grub/grub.cfg"
-alias sudo="echo STOP USING BLOAT AND USE DOAS NOW && doas"
+alias ihatemylife="doas emerge -avuDt --changed-use --with-bdeps=y @world" 
+alias sudo="doas"
 alias reboot="doas reboot"
-alias feh="feh -B black"
+alias shutdown="doas openrc-shutdown --poweroff now"
+
+# Created by `pipx` on 2024-06-20 17:59:21
+set PATH $PATH /home/lampis/.local/bin
