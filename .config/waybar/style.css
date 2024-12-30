@@ -1,7 +1,16 @@
+@define-color bg_color#282828;
+@define-color fg_color #fbf1c7;
+@define-color accent_color #d8e49c;
+
+@define-color background_color   @bg_color;
+@define-color dark_color         @fg_color;
+@define-color light_color        @accent_color;
+
 * {
     border:        none;
     border-radius: 0;
-    font-family:   Iosevka, "Font Awesome 6 Free";
+    font-family:   Iosevka,"Font Awesome 6 Free";
+    color: @dark_color;
     font-size:     11px;
     box-shadow:    none;
     text-shadow:   none;
@@ -13,51 +22,64 @@ window#waybar {
 
 window#waybar > box {
     border-radius: 0px;
-    margin: 0px 0px 6px 0px;
-    background-color: #262626;
-    box-shadow: 3px 3px 2px 1px #101010;
+    margin: 5px 10px 6px 10px;
+    background-color: @background_color;
+    box-shadow: 2px 3px 2px 2px #101010;
 }
 #workspaces {
 }
 
 #workspaces button.active {
     padding:    0 2px;
-    color:      #d8e49c;
-    border-bottom: 2px solid #d8e49c;
-    border-right: 3px solid #262626;
-    border-left: 3px solid #262626;
-    border-top: 2px solid #262626;
+    color:      @light_color;
+    border-bottom: 2px solid @dark_color;
+    border-right: 3px solid @background_color;
+    border-left: 3px solid @background_color;
+    border-top: 2px solid @background_color;
 }
 #workspaces button {
-    color:      #d8e49c;
-    border-left: 3px solid #262626;
-    border-right: 3px solid #262626;
-    border-top: 2px solid #d8e49c;
+    color:      @light_color;
+    border-left: 3px solid @background_color;
+    border-right: 3px solid @background_color;
+    border-top: 2px solid @dark_color;
     padding:    0 2px;
 }
 
 #workspaces button.visible {
-    color:      #d8e49c;
+    color:      @dark_color;
 }
 
 #workspaces button.empty {
-    color:      #d8e49c;
-    border-top: 2px solid #262626;
+    color:      @dark_color;
+    border-top: 2px solid @background_color;
 }
 #mode, #memory,  #pulseaudio, #language {
     margin:     0px 0px 0px 0px;
     min-width:  20px;
-    background: #d8e49c;
-    color: #262626;
+    color: @background_color;
+    background-color: @light_color;
 }
 
 #mode, #cpu, #disk, #battery, #clock {
     margin:     0px 0px 0px 0px;
     min-width:  20px;
-    background: #fbf1c7;
-    color: #262626;
+    color: @background_color;
+    background-color: @dark_color;
 }
-image.focused {
-	color: #000000;
+#custom-arrow1 {
+        font-size: 16px;
+        color: @light_color;
+        background: @dark_color;
 }
 
+#custom-arrow2 {
+        font-size: 16px;
+        color: @dark_color;
+        background: @light_color;
+}
+
+#custom-arrow3 {
+        font-size: 16px;
+        color: @dark_color;
+        background: @background_color;
+}

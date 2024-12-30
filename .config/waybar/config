@@ -1,28 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 24,
 
     "modules-left": [ "hyprland/workspaces", "custom/layout", "hyprland/window"],
-    "modules-right": ["image#pl3", "cpu", "image#pl1", "memory", "image#pl2", "disk", "image#pl1", "pulseaudio", "image#pl2", "battery", "image#pl1", "hyprland/language", "image#pl2", "clock"],
+    "modules-right": ["custom/arrow3", "cpu", "custom/arrow1", "memory", "custom/arrow2", "disk", "custom/arrow1", "pulseaudio", "custom/arrow2", "battery", "custom/arrow1", "hyprland/language", "custom/arrow2", "clock"],
     "hyprland/mode": {
         "format": " {}"
-    },
-   "image#pl1": {
-	"path": "/home/lampis/.config/waybar/icons/pl1.xpm",
-	"size": 24,
-},
-   "image#pl2": {
-	"path": "/home/lampis/.config/waybar/icons/pl2.xpm",
-	"size": 24,
-},
-   "image#pl3": {
-	"path": "/home/lampis/.config/waybar/icons/pl3.xpm",
-	"size": 24,
-    },
-   "image#pl4": {
-	"path": "/home/lampis/.config/waybar/icons/pl4.xpm",
-	"size": 24,
     },
     "hyprland/workspaces": {
         "persistent-workspaces": {"*": 9},
@@ -37,7 +20,7 @@
         }
 	},
     "hyprland/window": {
-        "max-length": 45,
+        "max-length": 50,
         "tooltip": false,
 	"format": " |  {title}",
     },
@@ -49,7 +32,7 @@
         "tooltip": false,
     },
     "clock": {
-        "format": "  {:%a %d %b %H:%M} ",
+        "format": "    {:%a %d %b %H:%M} ",
         "tooltip": false
     },
     "disk": {
@@ -85,4 +68,16 @@
         "on-click": "pavucontrol",
         "tooltip": false
     },
+    "custom/arrow1": {
+                 "format": "",
+                 "tooltip": false
+         },
+    "custom/arrow2": {
+                 "format": "",
+                 "tooltip": false
+         },
+    "custom/arrow3": {
+                 "format": "",
+                 "tooltip": false
+         },
 }
