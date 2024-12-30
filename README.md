@@ -1,6 +1,7 @@
 # My xmonad and hyprland configuration
  My mostly yoinked dotfiles for my xmonad. This repo is mostly meant for me to store my configs for easy access but feel free to use them. 
-I recently switched over to hyprland, it's a great window manager. My configs for both window managers are very similar.
+I recently switched over to hyprland, it's a great window manager. My configs for both window managers are very similar. I only use hyprland nowadays, 
+but my old configs for xmonad will still be available here.
 
 ### Prerequisites: 
 
@@ -10,11 +11,11 @@ I recommend installing these packages with stack, [here's how.](https://brianbuc
 On Gentoo Linux, compile xmobar with the `xpm` and `xft` USE flags.
 
 ## Kernel
- I use a custom kernel for my Thinkpad X220 Gentoo installation, it uses LZ4 to compress the kernel and the initramfs. For me, I have to add the line `compress="lz4"` to the file `/etc/dracut.conf.d/myflags.conf` and compile `sys-kernel/installkernel` with the `dracut` USE flag. It might slightly improve battery life over the dist kernel.
+ I use a custom kernel for my Thinkpad X230 Gentoo installation, it uses LZ4 to compress the kernel and the initramfs. For me, I have to add the line `compress="lz4"` to the file `/etc/dracut.conf.d/myflags.conf` and compile `sys-kernel/installkernel` with the `dracut` USE flag. It might slightly improve battery life over the dist kernel.
 
 ### Screenshots
 
-## XMonad
+## XMonad (On workstation laptop)
 
 ![](Images/desktopscreenshot.png)
 
@@ -22,7 +23,7 @@ On Gentoo Linux, compile xmobar with the `xpm` and `xft` USE flags.
 
 ![](Images/1678903064.png)
 
-## Hyprland
+## Hyprland (on my X230 Thinkpad)
 
 ![](Images/20240225_08h58m41s_grim.png)
 
@@ -36,25 +37,25 @@ xmonad, hyprland
 xmobar, waybar
 
 ### Prompt: 
-rofi, wofi
+tofi
 
 ### Font: 
-Iosevka
+Iosevka, Terminus
 
 ### Colorscheme: 
 [Gruvbox Dark](https://github.com/jmattheis/gruvbox-dark-gtk)
 
 ### Icons: 
-Mint-Y Legacy
+Mint-Y Legacy, Haiku
 
 ### Terminal: 
-kitty
+kitty, foot
 
 ### Shell: 
 fish
 
 ### Editor:
-Vim
+Vim, Neovim (NVChad)
 
 ### Compositor: 
 picom
@@ -66,7 +67,7 @@ feh, hyprpaper
 Dunst
 
 ### Misc software that I use:
-mpv, maim, MuPDF, nemo, OBS, Vscodium, Obsidian
+mpv, maim, MuPDF, nemo, OBS, Vscodium, Obsidian, LibreOffice
 
 ### Contact Info:
 
