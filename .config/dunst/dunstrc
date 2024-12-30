@@ -9,17 +9,17 @@
 
     ### Geometry ###
 
-    width = 375
+    width = 350
 
-    height = 300
+    height = 110
 
     origin = top-right
 
-    offset = 10x50
+    offset = 24x18
 
     scale = 0
 
-    notification_limit = 20
+    notification_limit = 2
 
     ### Progress bar ###
 
@@ -51,7 +51,7 @@
 
     frame_width = 2
 
-    frame_color = "#FFF5HB"
+    frame_color = "#d8e49c"
 
     gap_size = 0
 
@@ -89,11 +89,11 @@
 
     enable_recursive_icon_lookup = true
 
-    icon_theme = Mint-Y-Sand
+    icon_theme = Haiku
 
     icon_position = left
 
-    min_icon_size = 64
+    min_icon_size = 32
 
     max_icon_size = 64
 
@@ -109,7 +109,7 @@
 
     dmenu = /usr/bin/rofi -show run -p dunst:
 
-    browser = /usr/bin/firefox
+    browser = /usr/bin/firefox-bin
 
     always_run_script = true
 
@@ -129,17 +129,17 @@
 
 
 [urgency_low]
-    background = "#282828"
+    background = "#262626"
     foreground = "#d8e49c"
-    timeout = 10
+    timeout = 7
 
 [urgency_normal]
-    background = "#282828"
+    background = "#262626"
     foreground = "#d8e49c"
-    timeout = 10
+    timeout = 7
 
 [urgency_critical]
-    background = "#282828"
+    background = "#262626"
     foreground = "#d8e49c"
     frame_color = "#FFF5HB"
     timeout = 0
