@@ -25,7 +25,7 @@ On Gentoo Linux, compile xmobar with the `xpm` and `xft` USE flags.
 
 ## Hyprland (on my X230 Thinkpad)
 
-![](Images/20240225_08h58m41s_grim.png)
+![](Images/Screenshot-2024-12-30_20:39:47.png)
 
 ### OS: 
 Gentoo Linux
