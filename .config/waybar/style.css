@@ -1,85 +1,94 @@
-@define-color bg_color#282828;
-@define-color fg_color #fbf1c7;
-@define-color accent_color #d8e49c;
-
-@define-color background_color   @bg_color;
-@define-color dark_color         @fg_color;
-@define-color light_color        @accent_color;
+@define-color bg_color #303338;
+@define-color fg_color #FFFFFF;
+@define-color fg1_color #FF0000;
 
 * {
-    border:        none;
+    border: none;
     border-radius: 0;
-    font-family:   Iosevka,"Font Awesome 6 Free";
-    color: @dark_color;
-    font-size:     11px;
-    box-shadow:    none;
-    text-shadow:   none;
+    font-family: "Terminus", "Font Awesome 6 Free";
+    font-size: 11px;
+    box-shadow: none;
+    text-shadow: none;
+    min-height: 0;
     transition-duration: 0s;
 }
+
 window#waybar {
-    background-color: transparent;
+    background-color: @transparent;
 }
 
 window#waybar > box {
     border-radius: 0px;
-    margin: 5px 10px 6px 10px;
-    background-color: @background_color;
-    box-shadow: 2px 3px 2px 2px #101010;
+    margin: 5px 14px;
+    background-color: @bg_color;
+    box-shadow: 2px 2px 2px 2px #101010;
 }
+
 #workspaces {
+    color: @bg_color;
+}
+
+#workspaces button {
+    color: @fg_color;
+    border-left: 3px solid @bg_color;
+    border-right: 3px solid @bg_color;
+    border-top: 2px solid @fg_color;
+    padding: 0 2px;
 }
 
 #workspaces button.active {
-    padding:    0 2px;
-    color:      @light_color;
-    border-bottom: 2px solid @dark_color;
-    border-right: 3px solid @background_color;
-    border-left: 3px solid @background_color;
-    border-top: 2px solid @background_color;
-}
-#workspaces button {
-    color:      @light_color;
-    border-left: 3px solid @background_color;
-    border-right: 3px solid @background_color;
-    border-top: 2px solid @dark_color;
-    padding:    0 2px;
+    padding: 0 2px;
+    color: @fg_color;
+    border-bottom: 2px solid @fg1_color;
+    border-right: 3px solid @bg_color;
+    border-left: 3px solid @bg_color;
+    border-top: 2px solid @bg_color;
 }
 
-#workspaces button.visible {
-    color:      @dark_color;
+#workspaces button.visible,
+#custom-free {
+    color: @fg_color;
 }
 
 #workspaces button.empty {
-    color:      @dark_color;
-    border-top: 2px solid @background_color;
-}
-#mode, #memory,  #pulseaudio, #language {
-    margin:     0px 0px 0px 0px;
-    min-width:  20px;
-    color: @background_color;
-    background-color: @light_color;
+    color: @fg_color;
+    border-top: 2px solid @bg_color;
 }
 
-#mode, #cpu, #disk, #battery, #clock {
-    margin:     0px 0px 0px 0px;
-    min-width:  20px;
-    color: @background_color;
-    background-color: @dark_color;
-}
-#custom-arrow1 {
-        font-size: 16px;
-        color: @light_color;
-        background: @dark_color;
-}
-
-#custom-arrow2 {
-        font-size: 16px;
-        color: @dark_color;
-        background: @light_color;
+#mode,
+#cpu,
+#memory,
+#disk,
+#backlight,
+#pulseaudio,
+#battery,
+#language
+ {
+    margin: 0 22px 0 0;
+    min-width: 0px;
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
-#custom-arrow3 {
-        font-size: 16px;
-        color: @dark_color;
-        background: @background_color;
+#window {
+    border-radius: 8px;
+    border-top: 1px solid @bg_color;
+    border-bottom: 1px solid @bg_color;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: @bg_color;
+    color: @fg_color;
 }
+
+#custom-cpuicon,
+#custom-memoryicon,
+#custom-diskicon,
+#custom-dateicon,
+#backlight.b2,
+#battery.bat2,
+#pulseaudio.p2,
+#custom-bsd {
+    color: @fg1_color;
+    margin: 0;
+}
+
