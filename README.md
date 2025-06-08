@@ -1,7 +1,9 @@
-# My xmonad and hyprland configuration
+# My XMonad and Hyprland configuration
 My dotfiles for my XMonad & Hyprland. This repo is mostly meant for me to store my configs for easy access but feel free to yoink them. 
 I recently switched over to hyprland, it's a great window manager. My configs for both window managers are very similar. I only use hyprland nowadays, 
 but my old configs for xmonad will still be available here.
+
+I try to keep my files easily readable and editable. Waybar has defined colors for easy theme switching. Keep in mind that my Hyprland ecosystem is configured for a low res 1366x768 display, so remember to adjust the config files accoring to your screen resolution. 
 
 ### Prerequisites: 
 
@@ -36,7 +38,7 @@ xmonad, hyprland
 ### Bar: 
 xmobar, waybar
 
-### Prompt: 
+### Search Prompt: 
 tofi
 
 ### Font: 
@@ -56,7 +58,7 @@ foot
 yash
 
 ### Editor:
-Neovim (NVChad)
+Neovim (NVChad), mousepad
 
 ### Compositor: 
 picom
@@ -68,7 +70,7 @@ feh, waypaper/swww
 Dunst
 
 ### Misc software that I use:
-mpv, maim, MuPDF, nemo, wf-recorder, grim+slurp, Obsidian, LibreOffice
+mpv, maim, MuPDF, nemo, wf-recorder, grim+slurp, Obsidian, LibreOffice, tlp, doas, imv
 
 ### Contact Info:
 Do message me if you have any questions/request regarding my dotfiles.
