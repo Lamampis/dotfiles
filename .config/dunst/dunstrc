@@ -11,7 +11,7 @@
 
     width = 350
 
-    height = 110
+    height = 130
 
     origin = top-right
 
@@ -39,7 +39,7 @@
 
     indicate_hidden = yes
 
-    transparency = 0
+    transparency = 10
 
     separator_height = 3
 
@@ -51,9 +51,9 @@
 
     frame_width = 2
 
-    frame_color = "#d8e49c"
+    frame_color = "#ff0000"
 
-    gap_size = 0
+    gap_size = 4
 
     separator_color = frame
 
@@ -89,7 +89,7 @@
 
     enable_recursive_icon_lookup = true
 
-    icon_theme = Haiku
+    icon_theme = Mint-L-Sand
 
     icon_position = left
 
@@ -109,7 +109,7 @@
 
     dmenu = /usr/bin/rofi -show run -p dunst:
 
-    browser = /usr/bin/firefox-bin
+    browser = /usr/bin/librewolf-bin
 
     always_run_script = true
 
@@ -129,17 +129,17 @@
 
 
 [urgency_low]
-    background = "#262626"
-    foreground = "#d8e49c"
+    background = "#303338"
+    foreground = "#ffffff"
     timeout = 7
 
 [urgency_normal]
-    background = "#262626"
-    foreground = "#d8e49c"
+  background = "#303338"
+    foreground = "#ffffff"
     timeout = 7
 
 [urgency_critical]
-    background = "#262626"
-    foreground = "#d8e49c"
+  background = "#303338"
+  foreground = "#ffffff"
     frame_color = "#FFF5HB"
     timeout = 0
