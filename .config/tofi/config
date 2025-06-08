@@ -50,9 +50,7 @@
 	# Default text color
 	#
 	# All text defaults to this color if not otherwise specified.
-	text-color = #fbf1c7
-
-	# All pieces of text have the same theming attributes available:
+	text-color = #ffffff
 	#
 	# *-color
 	#     Foreground color
@@ -171,19 +169,19 @@
 	height = 600
 
 	# Window background color
-	background-color = #282828
+	background-color = #303338
 
 	# Width of the border outlines in pixels.
 	outline-width = 1
 
 	# Border outline color
-	outline-color = #d8e49c
+	outline-color = #ff0000
 
 	# Width of the border in pixels.
 	border-width = 0
 
 	# Border color
-	border-color = #F92672
+	border-color = #ff0000
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
