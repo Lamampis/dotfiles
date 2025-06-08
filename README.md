@@ -16,9 +16,6 @@ On Gentoo Linux, compile xmobar with the `xpm` and `xft` USE flags.
 ![](Images/1678902994.png)
 
 ## Hyprland (on my X230 Thinkpad)
-
-![](Images/Screenshot-2024-12-30_20:39:47.png)
-
 ![](Images/image.png)
 
 ### OS: 
