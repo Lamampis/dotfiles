@@ -1,0 +1,99 @@
+* {
+    font:                   "Terminus 12";
+
+    bg-main:                #303338;
+    bg-alt:                 #373B41;
+    bg-border:              #ff000080;
+    bg-selected:            #ff0000;
+
+    fg-main:                #ffffff;
+    fg-selected:            #ffffff;
+    fg-faded:               #ffffff80;
+
+    background-color:       transparent;
+    text-color:             @fg-main;
+
+    margin:                 0;
+    padding:                0;
+    spacing:                0;
+}
+
+window {
+    background-color:       @bg-main;
+    location:               center;
+    width:                  440;
+    border-radius:          0;
+}
+
+inputbar {
+    font:                   "Terminus 12";
+    padding:                12px;
+    spacing:                12px;
+    children:               [ icon-search, entry ];
+}
+
+icon-search {
+    expand:                 false;
+    filename:               "search";
+    size:                   0px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:                   inherit;
+    text-color:             @fg-selected;
+
+    placeholder             : "Search";
+    placeholder-color       : @fg-faded;
+}
+
+message {
+    border:                 2px 0 0;
+    border-color:           @bg-border;
+    background-color:       @bg-border;
+}
+
+textbox {
+    padding:                8px 24px;
+}
+
+listview {
+    lines:                  10;
+    columns:                1;
+
+    fixed-height:           false;
+    border:                 0px 0 0;
+    border-color:           @bg-border;
+}
+
+element {
+    padding:                8px 16px;
+    spacing:                16px;
+    background-color:       transparent;
+}
+
+element normal normal {
+    background-color:       @bg-main;
+    text-color:             @fg-main;
+}
+
+element alternate normal {
+    background-color:       @bg-alt;
+    text-color:             @fg-main;
+}
+
+element selected normal {
+    background-color:       @bg-selected;
+    text-color:             @fg-selected;
+}
+
+element-icon {
+    size:                   1em;
+}
+
+element-text {
+    text-color:             inherit;
+}
