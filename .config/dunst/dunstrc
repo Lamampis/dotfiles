@@ -13,13 +13,13 @@
 
     height = 130
 
-    origin = top-right
+    origin = bottom-right
 
-    offset = 24x18
+    offset = 30x30
 
     scale = 0
 
-    notification_limit = 2
+    notification_limit = 3
 
     ### Progress bar ###
 
@@ -39,7 +39,7 @@
 
     indicate_hidden = yes
 
-    transparency = 10
+    transparency = 0
 
     separator_height = 3
 
@@ -51,9 +51,9 @@
 
     frame_width = 2
 
-    frame_color = "#ff0000"
+    frame_color = "#005577"
 
-    gap_size = 4
+    gap_size = 0
 
     separator_color = frame
 
@@ -103,13 +103,13 @@
 
     sticky_history = yes
 
-    history_length = 20
+    history_length = 10
 
     ### Misc/Advanced ###
 
     dmenu = /usr/bin/rofi -show run -p dunst:
 
-    browser = /usr/bin/librewolf-bin
+    browser = /usr/bin/zen
 
     always_run_script = true
 
@@ -123,23 +123,23 @@
 
     force_xinerama = true
 
-    mouse_left_click = close_current
+    mouse_left_click = do_action, close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
 
 [urgency_low]
-    background = "#303338"
-    foreground = "#ffffff"
+    background = "#222222"
+    foreground = "#eeeeee"
     timeout = 7
 
 [urgency_normal]
-  background = "#303338"
-    foreground = "#ffffff"
+  background = "#222222"
+    foreground = "#eeeeee"
     timeout = 7
 
 [urgency_critical]
-  background = "#303338"
-  foreground = "#ffffff"
-    frame_color = "#FFF5HB"
+  background = "#222222"
+  foreground = "#eeeeee"
+    frame_color = "#005577"
     timeout = 0
