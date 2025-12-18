@@ -19,7 +19,6 @@ window#waybar {
 
 window#waybar > box {
     border-radius: 0px;
-    margin: 5px 14px;
     background-color: @bg_color;
     box-shadow: 2px 2px 2px 2px #101010;
 }
@@ -91,4 +90,3 @@ window#waybar > box {
     color: @fg1_color;
     margin: 0;
 }
-
