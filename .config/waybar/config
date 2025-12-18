@@ -46,6 +46,7 @@
 
   "cpu": {
     "format": "cpu: {usage}%",
+    "interval": 2,
     "states": {
       "warning": 70,
       "critical": 90
@@ -54,7 +55,7 @@
 
   "memory": {
     "interval": 30,
-    "format": "{used:0.1f}G/{total:0.1f}"
+    "format": "{used:0.1f}G/{total:0.1f}G"
   },
 
   "disk": {
