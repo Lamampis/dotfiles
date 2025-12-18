@@ -1,0 +1,30 @@
+!! Reload .Xresources with:
+!! xrdb -merge ~/.Xresources
+
+! sxiv
+Nxsiv.bar.font: Terminus:size=10:antialias=true:autohint=true
+Nsxiv.window.background: #24292E
+Nsxiv.window.foreground: #eeeeee
+
+! dwm
+dwm.font: Terminess Nerd Font:size=9:antialias=true:autohint=true
+dwm.normbgcolor: #222222
+dwm.normbordercolor: #444444
+dwm.normfgcolor: #bbbbbb
+dwm.selfgcolor: #eeeeee
+dwm.selbordercolor: #005577
+dwm.selbgcolor: #005577
+
+! st
+st.font: Terminus:12
+st.background: #24292e
+st.foreground: #eeeeee
+
+! dmenu
+dmenu.font: Terminus:size=10:antialias=true:autohint=true
+dmenu.background: #24292e
+dmenu.foreground: #bbbbbb
+dmenu.highlightbg:  #24292e
+dmenu.highlightfg:  #ffc978
+dmenu.selbackground: #005577
+dmenu.selforeground: #eeeeee
