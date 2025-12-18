@@ -1,0 +1,56 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.cursor]
+cursor = "#bbc2cf"
+text = "CellBackground"
+
+[colors.primary]
+background = "#303038"
+foreground = "#ffffff"
+
+[colors.selection]
+background = "#3e4451"
+text = "CellForeground"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 6
+
+[font.bold]
+family = "Terminus"
+style = "Bold"
+
+[font.bold_italic]
+family = "Terminus"
+style = "Bold Italic"
+
+[font.italic]
+family = "Terminus"
+style = "Italic"
+
+[font.normal]
+family = "Terminus"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+
+[scrolling]
+history = 5000
+
+[window]
+dynamic_padding = true
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 0
+y = 0
