@@ -1,0 +1,43 @@
+## SXHKD
+# "pkill -RTMIN+1 slstatus" signals slstatus to update instantly with new information (needs signals patch)
+# "mod1" is Alt_L, "mod4" is Super
+# @ prevents repeating
+
+
+## Media
+
+XF86Audio{Raise,Lower}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%} && pkill -RTMIN+1 slstatus
+
+XF86MonBrightness{Up,Down}
+    brightnessctl set {5%+,5%-}
+
+@XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 slstatus
+
+@XF86AudioMicMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+## Programs
+
+mod4 + Return
+    st
+
+mod4 + shift + Return
+    j4-dmenu-desktop --usage-log ~/.local/share/j4-dmenu-desktop-usage.log --prune-bad-usage-log-entries --dmenu="dmenu -c -i -l 12"
+
+# options_dmenu and screenshot_dmenu are in .local/bin/
+mod4 + o
+    options_dmenu
+
+@Print
+    screenshot_dmenu
+
+mod4 + n
+    nemo
+
+# Switch keyboard layout signal
+mod1 + Shift_L
+    pkill -RTMIN+1 slstatus
+
