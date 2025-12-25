@@ -1,0 +1,35 @@
+## How to install nix packages with home-manager + nix-system-graphics
+
+# Install Nix
+  https://nixos.org/download/
+
+# Add/Restart nix-daemon service
+  doas rc-service nix-daemon restart
+  https://wiki.gentoo.org/wiki/User:Alxhr0/Nix_on_openrc
+
+# Enable flakes and nix-command:
+  echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+  and to /etc/nix/nix.conf
+
+# Cd to nix-home
+  nix run github:nix-community/home-manager -- switch --flake .#lampis-home
+  sudo -E env "PATH=$PATH" nix run 'github:numtide/system-manager' -- switch --flake .
+
+## Done!!
+
+=========================================================================================
+
+## After:
+
+# To update config/packages
+  home-manager switch --flake .#lampis-home
+
+# To clean up
+  nix-collect-garbage -d   
+
+# To update:
+  nix flake update
+
+# Generations/Rollback
+  home-manager generations
+  /nix/store/xxx-home-manager/generation/activate
